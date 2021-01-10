@@ -211,6 +211,7 @@ namespace GUI
             this.traCứuHọcSinhToolStripMenuItem.Name = "traCứuHọcSinhToolStripMenuItem";
             this.traCứuHọcSinhToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.traCứuHọcSinhToolStripMenuItem.Text = "Tra Cứu Học Sinh";
+            this.traCứuHọcSinhToolStripMenuItem.Click += new System.EventHandler(this.traCứuHọcSinhToolStripMenuItem_Click);
             // 
             // lớpToolStripMenuItem
             // 
@@ -275,6 +276,7 @@ namespace GUI
             this.thayĐổiQuyĐịnhToolStripMenuItem.Name = "thayĐổiQuyĐịnhToolStripMenuItem";
             this.thayĐổiQuyĐịnhToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.thayĐổiQuyĐịnhToolStripMenuItem.Text = "Thay Đổi Quy Định";
+            this.thayĐổiQuyĐịnhToolStripMenuItem.Click += new System.EventHandler(this.thayĐổiQuyĐịnhToolStripMenuItem_Click);
             // 
             // frmTrangChu
             // 

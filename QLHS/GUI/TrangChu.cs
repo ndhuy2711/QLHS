@@ -38,5 +38,17 @@ namespace GUI
             Lop l = new Lop();
             l.Show();
         }
+
+        private void traCứuHọcSinhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TraCuuHS tchs = new TraCuuHS();
+            tchs.Show();
+        }
+
+        private void thayĐổiQuyĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThayDoiQuyDinh tdqd = new ThayDoiQuyDinh();
+            tdqd.Show();
+        }
     }
 }
