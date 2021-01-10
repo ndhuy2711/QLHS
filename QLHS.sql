@@ -4,16 +4,101 @@ GO
 
 CREATE TABLE HOCSINH
 (
-	mahs nvarchar (15),
-	hoten nvarchar(255),
-	gioitinh nvarchar(15),
-	ngaysinh date,
-	email nvarchar(255),
-	diachi nvarchar(255),
-	primary key (mahs)
+MaHocSinh nvarchar(10),
+HoTen nvarchar (50),
+GioiTinh nvarchar(3),
+NgaySinh datetime,
+DiaChi nvarchar(100),
+Email nvarchar(100),
+primary key (MaHocSinh)
 )
 
-INSERT INTO HOCSINH 
-VALUES ('HS01', N'Nguyễn Văn A', N'Nam', '1/1/1999', 'nva1999@gmail.com', N'123 Nam Kỳ Khởi Nghĩa, Phường Bến Nghé, Quận 1, TP.HCM')
+CREATE TABLE MONHOC
+(
+MaMonHoc nvarchar(10),
+TenMonHoc nvarchar(10),
+primary key (MaMonHoc)
+)
 
-select * from HOCSINH
+CREATE TABLE KHOILOP
+(
+MaKhoiLop nvarchar (10),
+TenKhoiLop nvarchar(10),
+primary key (MaKhoiLop)
+)
+
+CREATE TABLE HOCKI
+(
+MaHocKi int,
+TenHocKi nvarchar(10),
+primary key (MaHocKi)
+)
+
+CREATE TABLE DANHSACHLOP
+(
+MaLop nvarchar(10),
+TenLop nvarchar(10),
+SiSo int,
+MaKhoiLop nvarchar(10),
+primary key (MaLop)
+)
+
+CREATE TABLE CHITIETDSLOP
+(
+MaChiTietDSLop nvarchar(10),
+MaLop nvarchar(10),
+MaHocSinh nvarchar(10),
+TBHocKi1 float,
+TBHocKi2 float,
+Primary key (MaChiTietDSLop)
+)
+
+CREATE TABLE BAOCAOTONGKETMON
+(
+MaBaoCaoMon nvarchar(10),
+MaHocKi int,
+MaLop nvarchar(10),
+MaMon nvarchar(10),
+SoLuongDatMon int,
+TiLeDatMon float,
+primary key (MaBaoCaoMon)
+)
+
+CREATE TABLE BAOCAOTONGKETHK
+(
+MaBaoCaoHK nvarchar(10),
+MaHocKi nvarchar(10),
+MaLop nvarchar(10),
+SoLuongDat int,
+TiLeDat float,
+primary key (MaBaoCaoHK)
+)
+
+CREATE TABLE THAMSO
+(
+TuoiToiThieu int,
+TuoiToiDa int,
+SiSoToiDa int,
+DiemDatMon float,
+)
+
+CREATE TABLE KETQUAHOCTAP
+(
+MaKetQua nvarchar(10),
+MaChiTietDSLop nvarchar(10),
+MaHocKi nvarchar(10),
+DiemTBHocKi float,
+primary key (MaKetQua)
+)
+
+CREATE TABLE BANGDIEM
+(
+MaBangDiem nvarchar(10),
+MaHocSinh nvarchar(10),
+MaMonHoc nvarchar(10),
+Diem15phut float,
+Diem1tiet float,
+DiemCuoiKi float,
+primary key (MaBangDiem)
+)
+
