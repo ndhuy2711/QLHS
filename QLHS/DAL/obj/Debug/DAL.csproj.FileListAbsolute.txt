@@ -1,0 +1,9 @@
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\bin\Debug\DAL.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\bin\Debug\DAL.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\bin\Debug\DTO.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\bin\Debug\DTO.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\obj\Debug\DAL.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DAL\obj\Debug\DAL.pdb

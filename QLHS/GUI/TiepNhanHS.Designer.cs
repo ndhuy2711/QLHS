@@ -102,6 +102,7 @@ namespace GUI
             this.btn_hoanthanh.TabIndex = 10;
             this.btn_hoanthanh.Text = "Hoàn Thành";
             this.btn_hoanthanh.UseVisualStyleBackColor = true;
+            this.btn_hoanthanh.Click += new System.EventHandler(this.btn_hoanthanh_Click);
             // 
             // dt_ngaysinh
             // 
@@ -211,6 +212,8 @@ namespace GUI
             this.dtgv_danhsachhocsinh.Name = "dtgv_danhsachhocsinh";
             this.dtgv_danhsachhocsinh.Size = new System.Drawing.Size(568, 252);
             this.dtgv_danhsachhocsinh.TabIndex = 0;
+            this.dtgv_danhsachhocsinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachhocsinh_CellClick);
+            this.dtgv_danhsachhocsinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachhocsinh_CellContentClick);
             // 
             // btn_xeplophocsinh
             // 
@@ -233,6 +236,7 @@ namespace GUI
             this.btn_xoahocsinh.TabIndex = 11;
             this.btn_xoahocsinh.Text = "Xoá Học Sinh";
             this.btn_xoahocsinh.UseVisualStyleBackColor = true;
+            this.btn_xoahocsinh.Click += new System.EventHandler(this.btn_xoahocsinh_Click);
             // 
             // btn_capnhathocsinh
             // 
@@ -253,6 +257,7 @@ namespace GUI
             this.btn_tailai.TabIndex = 13;
             this.btn_tailai.Text = "Tải lại danh sách";
             this.btn_tailai.UseVisualStyleBackColor = true;
+            this.btn_tailai.Click += new System.EventHandler(this.btn_tailai_Click);
             // 
             // frmTiepNhanHS
             // 
@@ -270,6 +275,7 @@ namespace GUI
             this.MinimizeBox = false;
             this.Name = "frmTiepNhanHS";
             this.Text = "Tiếp nhận học sinh";
+            this.Load += new System.EventHandler(this.frmTiepNhanHS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

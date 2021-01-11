@@ -1,0 +1,11 @@
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\BUS.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\BUS.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\DAL.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\DTO.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\DAL.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\bin\Debug\DTO.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\obj\Debug\BUS.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,6 @@
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\bin\Debug\DTO.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\bin\Debug\DTO.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\obj\Debug\DTO.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\DTO\obj\Debug\DTO.pdb

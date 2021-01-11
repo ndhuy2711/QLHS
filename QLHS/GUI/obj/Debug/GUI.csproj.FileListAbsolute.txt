@@ -15,3 +15,10 @@ C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\obj\Debug\GUI.BaoCaoTongKetHK_L
 C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\obj\Debug\GUI.BaoCaoTongKetHK_Mon.resources
 C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\obj\Debug\GUI.NhapBangDiemMon.resources
 C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\obj\Debug\GUI.ThayDoiQuyDinh.resources
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\BUS.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\DAL.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\DTO.dll
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\BUS.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\DAL.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\bin\Debug\DTO.pdb
+C:\Users\ndhuy\OneDrive\Máy tính\QLHS\QLHS\GUI\obj\Debug\GUI.csproj.CopyComplete
