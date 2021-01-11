@@ -23,6 +23,20 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DataTable LayTatCaChiTietDSLop()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayTatCaChiTietDSLop();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            
+        }
         public int ThemHocSinh(QLHS_DTO hs)
         {
             try
@@ -41,6 +55,18 @@ namespace BUS
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.XoaHocSinh(ma);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int CapNhatHocSinh(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatHocSinh(hs);
             }
             catch (SqlException ex)
             {

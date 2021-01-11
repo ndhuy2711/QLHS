@@ -71,6 +71,7 @@ namespace GUI
                 hs.Email = txt_email.Text;
                 QLHS_BUS bus = new QLHS_BUS();
                 bus.ThemHocSinh(hs);
+                MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
                 LoadData();
             }
             catch (Exception ex)
@@ -92,6 +93,7 @@ namespace GUI
                 hs.MaHocSinh = txt_mahocsinh.Text;
                 QLHS_BUS bus = new QLHS_BUS();
                 bus.XoaHocSinh(hs);
+                MessageBox.Show("Xoá thành công học sinh " + txt_mahocsinh.Text+" !", "Thông báo");
                 LoadData();
             }
             catch (Exception ex)
@@ -114,6 +116,28 @@ namespace GUI
         private void dtgv_danhsachhocsinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void btn_capnhathocsinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QLHS_DTO hs = new QLHS_DTO();
+                hs.MaHocSinh = txt_mahocsinh.Text;
+                hs.HoTen = txt_hovaten.Text;
+                hs.NgaySinh = dt_ngaysinh.Value.ToString();
+                hs.GioiTinh = cb_gioitinh.Text;
+                hs.DiaChi = txt_diachi.Text;
+                hs.Email = txt_email.Text;
+                QLHS_BUS bus = new QLHS_BUS();
+                bus.CapNhatHocSinh(hs);
+                MessageBox.Show("Cập nhật thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

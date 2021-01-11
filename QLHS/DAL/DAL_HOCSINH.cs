@@ -30,6 +30,25 @@ namespace DAL
             }
         }
 
+        public DataTable LayTatCaChiTietDSLop()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT * FROM CHITIETDSLOP";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
         public int ThemHocSinh(QLHS_DTO hs)
         {
             int nRow = 0;
@@ -69,6 +88,35 @@ namespace DAL
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
                             new SqlParameter { ParameterName = "@MaHocSinh", Value = ma.MaHocSinh }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+
+        public int CapNhatHocSinh(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE HOCSINH SET HoTen = @HoTen, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, DiaChi = @DiaChi, Email = @Email WHERE MaHocSinh = @MaHocSinh";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaHocSinh", Value = hs.MaHocSinh },
+                            new SqlParameter { ParameterName = "@HoTen", Value = hs.HoTen },
+                            new SqlParameter { ParameterName = "@NgaySinh", Value = hs.NgaySinh },
+                            new SqlParameter { ParameterName = "@GioiTinh", Value = hs.GioiTinh },
+                            new SqlParameter { ParameterName = "@DiaChi", Value = hs.DiaChi },
+                            new SqlParameter { ParameterName = "@Email", Value = hs.Email }
                     );
 
             }

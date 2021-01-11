@@ -47,10 +47,10 @@ namespace GUI
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachlop)).BeginInit();
@@ -66,7 +66,7 @@ namespace GUI
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 180);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(617, 202);
+            this.groupBox1.Size = new System.Drawing.Size(513, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách các lớp";
@@ -97,13 +97,14 @@ namespace GUI
             this.dtgv_danhsachlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachlop.Location = new System.Drawing.Point(6, 25);
             this.dtgv_danhsachlop.Name = "dtgv_danhsachlop";
-            this.dtgv_danhsachlop.Size = new System.Drawing.Size(604, 171);
+            this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 208);
             this.dtgv_danhsachlop.TabIndex = 0;
+            this.dtgv_danhsachlop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachlop_CellContentClick);
             // 
             // btn_themlop
             // 
             this.btn_themlop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_themlop.Location = new System.Drawing.Point(13, 390);
+            this.btn_themlop.Location = new System.Drawing.Point(532, 249);
             this.btn_themlop.Name = "btn_themlop";
             this.btn_themlop.Size = new System.Drawing.Size(98, 38);
             this.btn_themlop.TabIndex = 1;
@@ -113,7 +114,7 @@ namespace GUI
             // btn_capnhatlop
             // 
             this.btn_capnhatlop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_capnhatlop.Location = new System.Drawing.Point(117, 390);
+            this.btn_capnhatlop.Location = new System.Drawing.Point(532, 293);
             this.btn_capnhatlop.Name = "btn_capnhatlop";
             this.btn_capnhatlop.Size = new System.Drawing.Size(98, 38);
             this.btn_capnhatlop.TabIndex = 2;
@@ -123,7 +124,7 @@ namespace GUI
             // btn_xoalop
             // 
             this.btn_xoalop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoalop.Location = new System.Drawing.Point(221, 390);
+            this.btn_xoalop.Location = new System.Drawing.Point(532, 337);
             this.btn_xoalop.Name = "btn_xoalop";
             this.btn_xoalop.Size = new System.Drawing.Size(98, 38);
             this.btn_xoalop.TabIndex = 3;
@@ -133,9 +134,9 @@ namespace GUI
             // btn_thoat
             // 
             this.btn_thoat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thoat.Location = new System.Drawing.Point(511, 390);
+            this.btn_thoat.Location = new System.Drawing.Point(532, 381);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(109, 38);
+            this.btn_thoat.Size = new System.Drawing.Size(98, 38);
             this.btn_thoat.TabIndex = 4;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
@@ -235,20 +236,21 @@ namespace GUI
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(17, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(607, 161);
+            this.groupBox2.Size = new System.Drawing.Size(613, 161);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học sinh";
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(184, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 38);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Thêm học sinh vào lớp";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // cb_lop
             // 
@@ -272,21 +274,20 @@ namespace GUI
             this.label6.TabIndex = 15;
             this.label6.Text = "Lớp";
             // 
-            // pictureBox1
+            // button1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(184, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(234, 38);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Thêm học sinh vào lớp";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(325, 390);
+            this.button2.Location = new System.Drawing.Point(532, 205);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 38);
             this.button2.TabIndex = 14;
@@ -298,7 +299,7 @@ namespace GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(642, 444);
+            this.ClientSize = new System.Drawing.Size(642, 427);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_thoat);
@@ -306,8 +307,10 @@ namespace GUI
             this.Controls.Add(this.btn_capnhatlop);
             this.Controls.Add(this.btn_themlop);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lop";
             this.Text = "Lớp học";
+            this.Load += new System.EventHandler(this.Lop_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachlop)).EndInit();

@@ -29,6 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTiepNhanHS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_mahocsinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -247,6 +248,7 @@ namespace GUI
             this.btn_capnhathocsinh.TabIndex = 12;
             this.btn_capnhathocsinh.Text = "Cập nhật học sinh";
             this.btn_capnhathocsinh.UseVisualStyleBackColor = true;
+            this.btn_capnhathocsinh.Click += new System.EventHandler(this.btn_capnhathocsinh_Click);
             // 
             // btn_tailai
             // 
@@ -271,6 +273,7 @@ namespace GUI
             this.Controls.Add(this.btn_xeplophocsinh);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTiepNhanHS";
