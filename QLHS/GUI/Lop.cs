@@ -23,17 +23,17 @@ namespace GUI
             try
             {
                 QLHS_BUS bus = new QLHS_BUS();
-                DataTable dt = bus.LayTatCaChiTietDSLop();
+                DataTable dt = bus.DSLop();
                 dtgv_danhsachlop.DataSource = dt;
                 if (dt.Rows.Count > 0)
                 {
                     dtgv_danhsachlop.Rows[0].Selected = true;
                     RowSelected = new QLHS_DTO();
-                    RowSelected.MaChiTietDSLop = dtgv_danhsachlop.SelectedRows[0].Cells["MaChiTietDSLop"].Value.ToString();
-                    RowSelected.MaLop = dtgv_danhsachlop.SelectedRows[0].Cells["MaLop"].Value.ToString();
                     RowSelected.MaHocSinh = dtgv_danhsachlop.SelectedRows[0].Cells["MaHocSinh"].Value.ToString();
-                    RowSelected.TBHocKi1 = float.Parse(dtgv_danhsachlop.SelectedRows[0].Cells["TBHocKi1"].Value.ToString());
-                    RowSelected.TBHocKi2 = float.Parse(dtgv_danhsachlop.SelectedRows[0].Cells["TBHocKi2"].Value.ToString());
+                    RowSelected.HoTen = dtgv_danhsachlop.SelectedRows[0].Cells["HoTen"].Value.ToString();
+                    RowSelected.TenKhoiLop = dtgv_danhsachlop.SelectedRows[0].Cells["TenKhoiLop"].Value.ToString();
+                    RowSelected.TenLop = dtgv_danhsachlop.SelectedRows[0].Cells["TenLop"].Value.ToString();
+                    RowSelected.SiSo = dtgv_danhsachlop.SelectedRows[0].Cells["SiSo"].Value.ToString();
                 }
             }
             catch (Exception ex)

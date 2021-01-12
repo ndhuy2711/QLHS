@@ -30,12 +30,12 @@ namespace DAL
             }
         }
 
-        public DataTable LayTatCaChiTietDSLop()
+        public DataTable DSLOP()
         {
             DBConnect provider = new DBConnect();
             try
             {
-                string strSql = "SELECT * FROM CHITIETDSLOP";
+                string strSql = "EXEC dbo.DSLOP";
                 provider.Connect(); ;
                 DataTable dt = provider.Select(CommandType.Text, strSql);
                 return dt;

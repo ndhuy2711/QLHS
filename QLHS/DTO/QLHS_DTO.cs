@@ -21,6 +21,12 @@ namespace DTO
         public string MaLop { get => _maLop; set => _maLop = value; }
         public float TBHocKi1 { get => _tBHocKi1; set => _tBHocKi1 = value; }
         public float TBHocKi2 { get => _tBHocKi2; set => _tBHocKi2 = value; }
+        //-----------------------------------
+        public string TenLop { get => _tenLop; set => _tenLop = value; }
+        public string SiSo { get => _siSo; set => _siSo = value; }
+        public string MaKhoiLop { get => _maKhoiLop; set => _maKhoiLop = value; }
+        //------------------------------------------
+        public string TenKhoiLop { get => _tenKhoiLop; set => _tenKhoiLop = value; }
 
         //--------------------HOCSINH--------------
         private string _maHocSinh;
@@ -34,6 +40,12 @@ namespace DTO
         private string _maLop;
         private float _tBHocKi1;
         private float _tBHocKi2;
+        //------------------DANHSACHLOP--------------------
+        private string _tenLop;
+        private string _siSo;
+        private string _maKhoiLop;
+        //------------------KHOILOP----------------------------
+        private string _tenKhoiLop;
     }
 
 }

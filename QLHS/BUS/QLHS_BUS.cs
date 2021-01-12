@@ -15,8 +15,8 @@ namespace BUS
         {
             try
             {
-                DAL_HOCSINH dao = new DAL_HOCSINH();
-                return dao.LayTatCaHocSinh();
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayTatCaHocSinh();
             }
             catch (SqlException ex)
             {
@@ -24,19 +24,19 @@ namespace BUS
             }
         }
 
-        public DataTable LayTatCaChiTietDSLop()
+        public DataTable DSLop()
         {
             try
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
-                return dal.LayTatCaChiTietDSLop();
+                return dal.DSLOP();
             }
             catch (SqlException ex)
             {
                 throw ex;
             }
-            
         }
+
         public int ThemHocSinh(QLHS_DTO hs)
         {
             try
