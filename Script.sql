@@ -1,4 +1,5 @@
-use QLHS
+﻿use QLHS
+go
 
 alter PROC DSLOP 
 AS
@@ -9,7 +10,20 @@ BEGIN
 	WHERE HS.MaHocSinh = CTDSL.MaHocSinh AND CTDSL.MaLop = DSL.MaLop AND DSL.MaKhoiLop = KL.MaKhoiLop
 END
 
-EXEC dbO.DSLOP
+EXEC dbo.DSLOP
+ go
+--------------Tìm kiếm bằng MaHocSinh trong lớp--------------
+ALTER PROC TIMHSBANGMA (@MaHocSinh nvarchar(10))
+AS
+BEGIN
+	
+	SELECT HS.MaHocSinh, HS.HoTen, KL.TenKhoiLop, DSL.TenLop
+	FROM HOCSINH HS, KHOILOP KL, CHITIETDSLOP CTDSL, DANHSACHLOP DSL
+	WHERE HS.MaHocSinh = @MaHocSinh  AND HS.MaHocSinh = CTDSL.MaHocSinh AND CTDSL.MaLop = DSL.MaLop AND DSL.MaKhoiLop = KL.MaKhoiLop
+END
+
+EXEC dbo.TIMHSBANGMA HS2
+--------------------
 
 SELECT * FROM HOCSINH
 SELECT * FROM CHITIETDSLOP

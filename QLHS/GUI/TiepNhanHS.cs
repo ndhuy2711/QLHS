@@ -60,24 +60,45 @@ namespace GUI
 
         private void btn_hoanthanh_Click(object sender, EventArgs e)
         {
+            int nam = int.Parse(DateTime.Now.Year.ToString());
+            int dtp = int.Parse(dt_ngaysinh.Value.Year.ToString());
+            int t = nam - dtp;
+            
             try
             {
-                QLHS_DTO hs = new QLHS_DTO();
-                hs.MaHocSinh = txt_mahocsinh.Text;
-                hs.HoTen = txt_hovaten.Text;
-                hs.NgaySinh = dt_ngaysinh.Value.ToString();
-                hs.GioiTinh = cb_gioitinh.Text;
-                hs.DiaChi = txt_diachi.Text;
-                hs.Email = txt_email.Text;
-                QLHS_BUS bus = new QLHS_BUS();
-                bus.ThemHocSinh(hs);
-                MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
-                LoadData();
+                if (14 < t && t < 21)
+                {
+                    if((txt_hovaten.Text != "") && (dt_ngaysinh.Value.ToString() != "") && (cb_gioitinh.Text != "") && (txt_diachi.Text != "") && (txt_email.Text != "") )
+                    {
+                        QLHS_DTO hs = new QLHS_DTO();
+                        hs.MaHocSinh = txt_mahocsinh.Text;
+                        hs.HoTen = txt_hovaten.Text;
+                        hs.NgaySinh = dt_ngaysinh.Value.ToString();
+                        hs.GioiTinh = cb_gioitinh.Text;
+                        hs.DiaChi = txt_diachi.Text;
+                        hs.Email = txt_email.Text;
+                        QLHS_BUS bus = new QLHS_BUS();
+                        bus.ThemHocSinh(hs);
+                        MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
+                        LoadData();
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa nhập đủ thông tin! Mời nhập lại!", "Cảnh báo");
+                    }    
+                }
+                else
+                {
+                    MessageBox.Show("Tuổi của học sinh chưa đúng quy định! Không thêm thành công", "Cảnh báo");
+                }
             }
             catch (Exception ex)
-            {
+                {
 
-            }
+                }
+            
+           
+            
         }
 
         private void btn_tailai_Click(object sender, EventArgs e)
@@ -89,13 +110,21 @@ namespace GUI
         {
             try
             {
-                QLHS_DTO hs = new QLHS_DTO();
-                hs.MaHocSinh = txt_mahocsinh.Text;
-                QLHS_BUS bus = new QLHS_BUS();
-                bus.XoaHocSinh(hs);
-                MessageBox.Show("Xoá thành công học sinh " + txt_mahocsinh.Text+" !", "Thông báo");
-                LoadData();
-            }
+                DialogResult DR =  MessageBox.Show("Bạn có chắc chắn xoá học sinh này!", "Thông báo", MessageBoxButtons.YesNo);
+                if(DialogResult.Yes == DR)
+                {
+                    QLHS_DTO hs = new QLHS_DTO();
+                    hs.MaHocSinh = txt_mahocsinh.Text;
+                    QLHS_BUS bus = new QLHS_BUS();
+                    bus.XoaHocSinh(hs);
+                    MessageBox.Show("Xoá thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
+                    LoadData();
+                }
+                else {
+                    LoadData();
+                }
+            }    
+                
             catch (Exception ex)
             {
 
@@ -109,6 +138,7 @@ namespace GUI
             txt_mahocsinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[0].Value.ToString();
             txt_hovaten.Text = dtgv_danhsachhocsinh.Rows[i].Cells[1].Value.ToString();
             cb_gioitinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[2].Value.ToString();
+            dt_ngaysinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[3].Value.ToString();
             txt_diachi.Text = dtgv_danhsachhocsinh.Rows[i].Cells[4].Value.ToString();
             txt_email.Text = dtgv_danhsachhocsinh.Rows[i].Cells[5].Value.ToString();
         }
@@ -122,17 +152,23 @@ namespace GUI
         {
             try
             {
-                QLHS_DTO hs = new QLHS_DTO();
-                hs.MaHocSinh = txt_mahocsinh.Text;
-                hs.HoTen = txt_hovaten.Text;
-                hs.NgaySinh = dt_ngaysinh.Value.ToString();
-                hs.GioiTinh = cb_gioitinh.Text;
-                hs.DiaChi = txt_diachi.Text;
-                hs.Email = txt_email.Text;
-                QLHS_BUS bus = new QLHS_BUS();
-                bus.CapNhatHocSinh(hs);
-                MessageBox.Show("Cập nhật thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
-                LoadData();
+                if ((txt_hovaten.Text != "") && (dt_ngaysinh.Value.ToString() != "") && (cb_gioitinh.Text != "") && (txt_diachi.Text != "") && (txt_email.Text != ""))
+                {
+                    QLHS_DTO hs = new QLHS_DTO();
+                    hs.MaHocSinh = txt_mahocsinh.Text;
+                    hs.HoTen = txt_hovaten.Text;
+                    hs.NgaySinh = dt_ngaysinh.Value.ToString();
+                    hs.GioiTinh = cb_gioitinh.Text;
+                    hs.DiaChi = txt_diachi.Text;
+                    hs.Email = txt_email.Text;
+                    QLHS_BUS bus = new QLHS_BUS();
+                    bus.CapNhatHocSinh(hs);
+                    MessageBox.Show("Cập nhật thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
+                    LoadData();
+                }
+                else {
+                    MessageBox.Show("Cập nhật không thành công! Mời bạn xem lại dữ liệu nhập! ", "Thông báo");
+                }
             }
             catch (Exception ex)
             {

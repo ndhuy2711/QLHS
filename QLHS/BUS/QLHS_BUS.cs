@@ -36,6 +36,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public int TIMHSBANGMA(string MaHocSinh)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.TIMHSBANGMA(MaHocSinh);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
 
         public int ThemHocSinh(QLHS_DTO hs)
         {

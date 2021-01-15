@@ -43,15 +43,15 @@ namespace GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cb_khoi = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_mahocsinh = new System.Windows.Forms.TextBox();
+            this.txt_namsinh = new System.Windows.Forms.TextBox();
+            this.txt_tenhocsinh = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
+            this.btn_tailai = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachlop)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,7 +95,7 @@ namespace GUI
             // dtgv_danhsachlop
             // 
             this.dtgv_danhsachlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_danhsachlop.Location = new System.Drawing.Point(6, 25);
+            this.dtgv_danhsachlop.Location = new System.Drawing.Point(4, 25);
             this.dtgv_danhsachlop.Name = "dtgv_danhsachlop";
             this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 208);
             this.dtgv_danhsachlop.TabIndex = 0;
@@ -156,7 +156,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 39);
+            this.label3.Location = new System.Drawing.Point(9, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 15);
             this.label3.TabIndex = 6;
@@ -196,40 +196,42 @@ namespace GUI
             this.cb_khoi.TabIndex = 9;
             this.cb_khoi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // txt_mahocsinh
             // 
-            this.textBox1.Location = new System.Drawing.Point(89, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 26);
-            this.textBox1.TabIndex = 10;
+            this.txt_mahocsinh.Location = new System.Drawing.Point(89, 28);
+            this.txt_mahocsinh.Name = "txt_mahocsinh";
+            this.txt_mahocsinh.Size = new System.Drawing.Size(125, 26);
+            this.txt_mahocsinh.TabIndex = 10;
+            this.txt_mahocsinh.TextChanged += new System.EventHandler(this.txt_mahocsinh_TextChanged);
             // 
-            // textBox2
+            // txt_namsinh
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(331, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(74, 26);
-            this.textBox2.TabIndex = 11;
+            this.txt_namsinh.Enabled = false;
+            this.txt_namsinh.Location = new System.Drawing.Point(331, 28);
+            this.txt_namsinh.Name = "txt_namsinh";
+            this.txt_namsinh.Size = new System.Drawing.Size(74, 26);
+            this.txt_namsinh.TabIndex = 11;
+            this.txt_namsinh.TextChanged += new System.EventHandler(this.txt_namsinh_TextChanged);
             // 
-            // textBox3
+            // txt_tenhocsinh
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(89, 65);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 26);
-            this.textBox3.TabIndex = 12;
+            this.txt_tenhocsinh.Enabled = false;
+            this.txt_tenhocsinh.Location = new System.Drawing.Point(89, 65);
+            this.txt_tenhocsinh.Name = "txt_tenhocsinh";
+            this.txt_tenhocsinh.Size = new System.Drawing.Size(156, 26);
+            this.txt_tenhocsinh.TabIndex = 12;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.cb_lop);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.btn_them);
+            this.groupBox2.Controls.Add(this.txt_namsinh);
+            this.groupBox2.Controls.Add(this.txt_mahocsinh);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cb_khoi);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txt_tenhocsinh);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
@@ -251,6 +253,7 @@ namespace GUI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // cb_lop
             // 
@@ -274,25 +277,26 @@ namespace GUI
             this.label6.TabIndex = 15;
             this.label6.Text = "Lớp";
             // 
-            // button1
+            // btn_them
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(184, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 38);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Thêm học sinh vào lớp";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_them.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.Location = new System.Drawing.Point(184, 117);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(234, 38);
+            this.btn_them.TabIndex = 14;
+            this.btn_them.Text = "Thêm học sinh vào lớp";
+            this.btn_them.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_tailai
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(532, 205);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 38);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Tải lại";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_tailai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tailai.Location = new System.Drawing.Point(532, 205);
+            this.btn_tailai.Name = "btn_tailai";
+            this.btn_tailai.Size = new System.Drawing.Size(98, 38);
+            this.btn_tailai.TabIndex = 14;
+            this.btn_tailai.Text = "Tải lại";
+            this.btn_tailai.UseVisualStyleBackColor = true;
+            this.btn_tailai.Click += new System.EventHandler(this.button2_Click);
             // 
             // Lop
             // 
@@ -300,7 +304,7 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(642, 427);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_tailai);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.btn_xoalop);
@@ -336,14 +340,14 @@ namespace GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_mahocsinh;
+        private System.Windows.Forms.TextBox txt_namsinh;
+        private System.Windows.Forms.TextBox txt_tenhocsinh;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cb_lop;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_tailai;
     }
 }

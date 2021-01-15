@@ -42,6 +42,9 @@ namespace GUI
             }
         }
 
+
+
+       
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -103,6 +106,40 @@ namespace GUI
         private void Lop_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            //QLHS_DTO hs = new QLHS_DTO();
+           // hs.MaHocSinh = txt_mahocsinh.Text;
+            try
+            {
+                if (RowSelected != null)
+                {
+                    QLHS_BUS bus = new QLHS_BUS();
+                    bus.TIMHSBANGMA(RowSelected.MaHocSinh);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txt_mahocsinh_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_namsinh_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

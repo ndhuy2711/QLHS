@@ -49,6 +49,28 @@ namespace DAL
                 provider.DisConnect();
             }
         }
+
+        public int TIMHSBANGMA(string MaHocSinh)
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "dbo.TIMHSBANGMA";
+                provider.Connect();
+                int nRow = provider.ExecuteNonQuery(CommandType.StoredProcedure, strSql,
+                            new SqlParameter { ParameterName = "@MaHocSinh", Value = MaHocSinh }
+                    );
+                return nRow;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
         public int ThemHocSinh(QLHS_DTO hs)
         {
             int nRow = 0;
