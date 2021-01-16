@@ -50,6 +50,7 @@ namespace GUI
             this.btn_xoahocsinh = new System.Windows.Forms.Button();
             this.btn_capnhathocsinh = new System.Windows.Forms.Button();
             this.btn_tailai = new System.Windows.Forms.Button();
+            this.btn_themkhoilop = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhocsinh)).BeginInit();
@@ -261,12 +262,25 @@ namespace GUI
             this.btn_tailai.UseVisualStyleBackColor = true;
             this.btn_tailai.Click += new System.EventHandler(this.btn_tailai_Click);
             // 
+            // btn_themkhoilop
+            // 
+            this.btn_themkhoilop.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.btn_themkhoilop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themkhoilop.Location = new System.Drawing.Point(606, 403);
+            this.btn_themkhoilop.Name = "btn_themkhoilop";
+            this.btn_themkhoilop.Size = new System.Drawing.Size(114, 50);
+            this.btn_themkhoilop.TabIndex = 14;
+            this.btn_themkhoilop.Text = "Thêm khối lớp";
+            this.btn_themkhoilop.UseVisualStyleBackColor = true;
+            this.btn_themkhoilop.Click += new System.EventHandler(this.btn_themkhoilop_Click);
+            // 
             // frmTiepNhanHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(733, 528);
+            this.Controls.Add(this.btn_themkhoilop);
             this.Controls.Add(this.btn_tailai);
             this.Controls.Add(this.btn_capnhathocsinh);
             this.Controls.Add(this.btn_xoahocsinh);
@@ -309,6 +323,7 @@ namespace GUI
         private System.Windows.Forms.Button btn_tailai;
         private System.Windows.Forms.TextBox txt_mahocsinh;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_themkhoilop;
     }
 }
 

@@ -50,5 +50,17 @@ namespace GUI
             ThayDoiQuyDinh tdqd = new ThayDoiQuyDinh();
             tdqd.Show();
         }
+
+        private void thêmKhốiLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KhoiLop kl = new KhoiLop();
+            kl.Show();
+        }
+
+        private void thêmLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemLop tl = new ThemLop();
+            tl.Show();
+        }
     }
 }

@@ -22,9 +22,9 @@ BEGIN
 	WHERE HS.MaHocSinh = @MaHocSinh  AND HS.MaHocSinh = CTDSL.MaHocSinh AND CTDSL.MaLop = DSL.MaLop AND DSL.MaKhoiLop = KL.MaKhoiLop
 END
 
-EXEC dbo.TIMHSBANGMA HS2
---------------------
+EXEC dbo.TIMHSBANGMA hs1
 
+--------------------
 SELECT * FROM HOCSINH
 SELECT * FROM CHITIETDSLOP
 SELECT * FROM DANHSACHLOP

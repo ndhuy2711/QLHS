@@ -53,6 +53,8 @@ namespace GUI
             this.báoCáoTổngKếtHọcKỳToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thayĐổiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thayĐổiQuyĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmKhốiLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -216,7 +218,9 @@ namespace GUI
             // lớpToolStripMenuItem
             // 
             this.lớpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.danhSáchLớpToolStripMenuItem});
+            this.danhSáchLớpToolStripMenuItem,
+            this.thêmKhốiLớpToolStripMenuItem,
+            this.thêmLớpToolStripMenuItem});
             this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
             this.lớpToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.lớpToolStripMenuItem.Text = "Lớp";
@@ -278,6 +282,20 @@ namespace GUI
             this.thayĐổiQuyĐịnhToolStripMenuItem.Text = "Thay Đổi Quy Định";
             this.thayĐổiQuyĐịnhToolStripMenuItem.Click += new System.EventHandler(this.thayĐổiQuyĐịnhToolStripMenuItem_Click);
             // 
+            // thêmKhốiLớpToolStripMenuItem
+            // 
+            this.thêmKhốiLớpToolStripMenuItem.Name = "thêmKhốiLớpToolStripMenuItem";
+            this.thêmKhốiLớpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thêmKhốiLớpToolStripMenuItem.Text = "Thêm Khối Lớp";
+            this.thêmKhốiLớpToolStripMenuItem.Click += new System.EventHandler(this.thêmKhốiLớpToolStripMenuItem_Click);
+            // 
+            // thêmLớpToolStripMenuItem
+            // 
+            this.thêmLớpToolStripMenuItem.Name = "thêmLớpToolStripMenuItem";
+            this.thêmLớpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thêmLớpToolStripMenuItem.Text = "Thêm Lớp";
+            this.thêmLớpToolStripMenuItem.Click += new System.EventHandler(this.thêmLớpToolStripMenuItem_Click);
+            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,5 +347,7 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem thêmKhốiLớpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thêmLớpToolStripMenuItem;
     }
 }

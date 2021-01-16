@@ -81,6 +81,7 @@ namespace GUI
                         bus.ThemHocSinh(hs);
                         MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
                         LoadData();
+                        bus.ThemCTDSLOP(hs);
                     }    
                     else
                     {
@@ -174,6 +175,12 @@ namespace GUI
             {
 
             }
+        }
+
+        private void btn_themkhoilop_Click(object sender, EventArgs e)
+        {
+            KhoiLop kl = new KhoiLop();
+            kl.Show();
         }
     }
 }

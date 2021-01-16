@@ -58,6 +58,12 @@
     <Compile Include="BaoCaoTongKetHK_Mon.Designer.cs">
       <DependentUpon>BaoCaoTongKetHK_Mon.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoiLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoiLop.Designer.cs">
+      <DependentUpon>KhoiLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhapBangDiemMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="ThayDoiQuyDinh.Designer.cs">
       <DependentUpon>ThayDoiQuyDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLop.Designer.cs">
+      <DependentUpon>ThemLop.cs</DependentUpon>
     </Compile>
     <Compile Include="TiepNhanHS.cs">
       <SubType>Form</SubType>
@@ -102,6 +114,9 @@
     <EmbeddedResource Include="BaoCaoTongKetHK_Mon.resx">
       <DependentUpon>BaoCaoTongKetHK_Mon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoiLop.resx">
+      <DependentUpon>KhoiLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lop.resx">
       <DependentUpon>Lop.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiQuyDinh.resx">
       <DependentUpon>ThayDoiQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLop.resx">
+      <DependentUpon>ThemLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiepNhanHS.resx">
       <DependentUpon>TiepNhanHS.cs</DependentUpon>

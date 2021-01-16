@@ -115,16 +115,18 @@ namespace GUI
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            //QLHS_DTO hs = new QLHS_DTO();
-           // hs.MaHocSinh = txt_mahocsinh.Text;
             try
             {
-                if (RowSelected != null)
-                {
-                    QLHS_BUS bus = new QLHS_BUS();
-                    bus.TIMHSBANGMA(RowSelected.MaHocSinh);
-
-                }
+                QLHS_BUS bus = new QLHS_BUS();
+                QLHS_DTO hs = new QLHS_DTO();
+                hs.MaHocSinh = txt_mahocsinh.Text;
+                DataTable dt = bus.TIMHSBANGMA(hs.MaHocSinh);
+                cb_khoi.DataSource = dt;
+                cb_khoi.DisplayMember = "TenKhoiLop";
+                cb_lop.DataSource = dt;
+                cb_lop.DisplayMember = "TenLop";
+                txt_tenhocsinh.Text = dt.Rows[0]["HoTen"].ToString();
+                txt_namsinh.Text = dt.Rows[0]["NgaySinh"].ToString();
             }
             catch (Exception ex)
             {

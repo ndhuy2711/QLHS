@@ -34,9 +34,6 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.btn_hoanthanh = new System.Windows.Forms.Button();
             this.dtgv_danhsachlop = new System.Windows.Forms.DataGridView();
-            this.btn_themlop = new System.Windows.Forms.Button();
-            this.btn_capnhatlop = new System.Windows.Forms.Button();
-            this.btn_xoalop = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,10 +63,10 @@ namespace GUI
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 180);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 239);
+            this.groupBox1.Size = new System.Drawing.Size(513, 195);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách các lớp";
+            this.groupBox1.Text = "Danh sách học sinh các lớp";
             // 
             // label1
             // 
@@ -97,44 +94,14 @@ namespace GUI
             this.dtgv_danhsachlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachlop.Location = new System.Drawing.Point(4, 25);
             this.dtgv_danhsachlop.Name = "dtgv_danhsachlop";
-            this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 208);
+            this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 158);
             this.dtgv_danhsachlop.TabIndex = 0;
             this.dtgv_danhsachlop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachlop_CellContentClick);
-            // 
-            // btn_themlop
-            // 
-            this.btn_themlop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_themlop.Location = new System.Drawing.Point(532, 249);
-            this.btn_themlop.Name = "btn_themlop";
-            this.btn_themlop.Size = new System.Drawing.Size(98, 38);
-            this.btn_themlop.TabIndex = 1;
-            this.btn_themlop.Text = "Thêm lớp";
-            this.btn_themlop.UseVisualStyleBackColor = true;
-            // 
-            // btn_capnhatlop
-            // 
-            this.btn_capnhatlop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_capnhatlop.Location = new System.Drawing.Point(532, 293);
-            this.btn_capnhatlop.Name = "btn_capnhatlop";
-            this.btn_capnhatlop.Size = new System.Drawing.Size(98, 38);
-            this.btn_capnhatlop.TabIndex = 2;
-            this.btn_capnhatlop.Text = "Cập nhật lớp";
-            this.btn_capnhatlop.UseVisualStyleBackColor = true;
-            // 
-            // btn_xoalop
-            // 
-            this.btn_xoalop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoalop.Location = new System.Drawing.Point(532, 337);
-            this.btn_xoalop.Name = "btn_xoalop";
-            this.btn_xoalop.Size = new System.Drawing.Size(98, 38);
-            this.btn_xoalop.TabIndex = 3;
-            this.btn_xoalop.Text = "Xoá lớp";
-            this.btn_xoalop.UseVisualStyleBackColor = true;
             // 
             // btn_thoat
             // 
             this.btn_thoat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thoat.Location = new System.Drawing.Point(532, 381);
+            this.btn_thoat.Location = new System.Drawing.Point(532, 325);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(98, 38);
             this.btn_thoat.TabIndex = 4;
@@ -290,7 +257,7 @@ namespace GUI
             // btn_tailai
             // 
             this.btn_tailai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tailai.Location = new System.Drawing.Point(532, 205);
+            this.btn_tailai.Location = new System.Drawing.Point(532, 281);
             this.btn_tailai.Name = "btn_tailai";
             this.btn_tailai.Size = new System.Drawing.Size(98, 38);
             this.btn_tailai.TabIndex = 14;
@@ -303,13 +270,10 @@ namespace GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(642, 427);
+            this.ClientSize = new System.Drawing.Size(642, 384);
             this.Controls.Add(this.btn_tailai);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_thoat);
-            this.Controls.Add(this.btn_xoalop);
-            this.Controls.Add(this.btn_capnhatlop);
-            this.Controls.Add(this.btn_themlop);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lop";
@@ -329,9 +293,6 @@ namespace GUI
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgv_danhsachlop;
-        private System.Windows.Forms.Button btn_themlop;
-        private System.Windows.Forms.Button btn_capnhatlop;
-        private System.Windows.Forms.Button btn_xoalop;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_hoanthanh;
