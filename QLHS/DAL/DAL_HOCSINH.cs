@@ -30,6 +30,26 @@ namespace DAL
             }
         }
 
+        public DataTable LayTatCaMonHoc()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT * FROM MONHOC";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+
         public DataTable LayTatCaKhoiLop()
         {
             DBConnect provider = new DBConnect();
@@ -55,6 +75,25 @@ namespace DAL
             try
             {
                 string strSql = "SELECT * FROM DANHSACHLOP";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+        public DataTable LayTatCaHocKi()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT * FROM HOCKI";
                 provider.Connect(); ;
                 DataTable dt = provider.Select(CommandType.Text, strSql);
                 return dt;
@@ -136,7 +175,30 @@ namespace DAL
             }
             return nRow;
         }
+        public int ThemMonHoc(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "INSERT INTO MONHOC(MaMonHoc, TenMonHoc) VALUES(@MaMonHoc, @TenMonHoc)";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaMonHoc", Value = hs.MaMonHoc },
+                            new SqlParameter { ParameterName = "@TenMonHoc", Value = hs.TenMonHoc }
+                    );
 
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
         public int ThemKhoiLop(QLHS_DTO hs)
         {
             int nRow = 0;
@@ -189,6 +251,50 @@ namespace DAL
             return nRow;
         }
 
+        public int ThemHocKi(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "INSERT INTO HOCKI(MaHocKi, TenHocKi) VALUES(@MaHocKi, @TenHocKi)";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaHocKi", Value = hs.MaHocKi },
+                            new SqlParameter { ParameterName = "@TenHocKi", Value = hs.TenHocKi }
+
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public DataTable ThemHSVaoLop(string TenLop)
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "EXEC dbo.ThemHSVaoLop '" + TenLop + "'";
+                provider.Connect();
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
         public int ThemCTDSLOP(QLHS_DTO hs)
         {
             int nRow = 0;
@@ -223,6 +329,29 @@ namespace DAL
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
                             new SqlParameter { ParameterName = "@MaHocSinh", Value = ma.MaHocSinh }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public int XoaMonHoc(QLHS_DTO ma)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "DELETE FROM MONHOC WHERE MaMonHoc = @MaMonHoc;";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaMonHoc", Value = ma.MaMonHoc }
                     );
 
             }
@@ -283,7 +412,29 @@ namespace DAL
             }
             return nRow;
         }
+        public int XoaHocKi(QLHS_DTO ma)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "DELETE FROM HOCKI WHERE MaHocKi = @MaHocKi;";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaHocKi", Value = ma.MaHocKi }
+                    );
 
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
 
         public int CapNhatHocSinh(QLHS_DTO hs)
         {
@@ -300,6 +451,30 @@ namespace DAL
                             new SqlParameter { ParameterName = "@GioiTinh", Value = hs.GioiTinh },
                             new SqlParameter { ParameterName = "@DiaChi", Value = hs.DiaChi },
                             new SqlParameter { ParameterName = "@Email", Value = hs.Email }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public int CapNhatMonHoc(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE MONHOC SET MaMonHoc = @MaMonHoc, TenMonHoc = @TenMonHoc";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaMonHoc", Value = hs.MaMonHoc },
+                            new SqlParameter { ParameterName = "@TenMonHoc", Value = hs.TenMonHoc }
                     );
 
             }
@@ -350,6 +525,30 @@ namespace DAL
                             new SqlParameter { ParameterName = "@TenLop", Value = hs.TenLop },
                             new SqlParameter { ParameterName = "@SiSo", Value = hs.SiSo },
                             new SqlParameter { ParameterName = "@MaKhoiLop", Value = hs.MaKhoiLop }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public int CapNhatHocKi(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE HOCKI SET MaHocKi = @MaHocKi, TenHocKi = @TenHocKi";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaHocKi", Value = hs.MaHocKi },
+                            new SqlParameter { ParameterName = "@TenHocKi", Value = hs.TenHocKi }
                     );
 
             }

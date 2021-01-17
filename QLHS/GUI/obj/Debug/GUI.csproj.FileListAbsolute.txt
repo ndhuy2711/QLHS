@@ -48,3 +48,6 @@ C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.exe
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.pdb
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.KhoiLop.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.ThemLop.resources
+C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.MonHoc.resources
+C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.NhapBangDiemMonHoc.resources
+C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.HOCKI.resources

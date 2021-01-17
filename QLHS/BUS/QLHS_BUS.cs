@@ -23,6 +23,30 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable LayTatCaMonHoc()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayTatCaMonHoc();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable LayTatCaHocKi()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayTatCaHocKi();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public DataTable LayTatCaKhoiLop()
         {
             try
@@ -84,12 +108,36 @@ namespace BUS
                 throw ex;
             }
         }
+        public int ThemMonHoc(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThemMonHoc(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public int ThemKhoiLop(QLHS_DTO hs)
         {
             try
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.ThemKhoiLop(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int ThemHocKi(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThemHocKi(hs);
             }
             catch (SqlException ex)
             {
@@ -107,9 +155,21 @@ namespace BUS
             {
                 throw ex;
             }
-        } 
-
-            public int ThemCTDSLOP(QLHS_DTO hs)
+        }
+        public DataTable ThemHSVaoLop(string TenLop)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThemHSVaoLop(TenLop);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+       
+        public int ThemCTDSLOP(QLHS_DTO hs)
         {
             try
             {
@@ -127,6 +187,18 @@ namespace BUS
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.XoaHocSinh(ma);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int XoaMonHoc(QLHS_DTO ma)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.XoaMonHoc(ma);
             }
             catch (SqlException ex)
             {
@@ -157,12 +229,36 @@ namespace BUS
                 throw ex;
             }
         }
+        public int XoaHocKi(QLHS_DTO ma)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.XoaHocKi(ma);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public int CapNhatHocSinh(QLHS_DTO hs)
         {
             try
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.CapNhatHocSinh(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int CapNhatMonHoc(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatMonHoc(hs);
             }
             catch (SqlException ex)
             {
@@ -187,6 +283,18 @@ namespace BUS
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.CapNhatLop(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int CapNhatHocKi(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatHocKi(hs);
             }
             catch (SqlException ex)
             {

@@ -27,6 +27,22 @@ namespace DTO
         public string MaKhoiLop { get => _maKhoiLop; set => _maKhoiLop = value; }
         //------------------------------------------
         public string TenKhoiLop { get => _tenKhoiLop; set => _tenKhoiLop = value; }
+        //------------------------------------------
+        public string MaBangDiem { get => _maBangDiem; set => _maBangDiem = value; }
+        public string MaMonHoc { get => _maMonHoc; set => _maMonHoc = value; }
+        public string Diem15phut { get => _diem15phut; set => _diem15phut = value; }
+        public string Diem1tiet { get => _diem1tiet; set => _diem1tiet = value; }
+        public string DiemCuoiKi { get => _diemCuoiKi; set => _diemCuoiKi = value; }
+        //----------------------------------------
+        public string TenMonHoc { get => _tenMonHoc; set => _tenMonHoc = value; }
+        //-------------------------------------------
+        public string MaHocKi { get => _maHocKi; set => _maHocKi = value; }
+        public string TenHocKi { get => _tenHocKi; set => _tenHocKi = value; }
+        
+
+
+
+
 
         //--------------------HOCSINH--------------
         private string _maHocSinh;
@@ -46,6 +62,18 @@ namespace DTO
         private string _maKhoiLop;
         //------------------KHOILOP----------------------------
         private string _tenKhoiLop;
+        //-----------------BANGDIEM--------------
+        private string _maBangDiem;
+        private string _maMonHoc;
+        private string _diem15phut;
+        private string _diem1tiet;
+        private string _diemCuoiKi;
+        //-------------------MONHOC------------------------
+        private string _tenMonHoc;
+        //--------------------HOCKI--------------
+        private string _maHocKi;
+        private string _tenHocKi;
+        //-----------------
     }
 
 }

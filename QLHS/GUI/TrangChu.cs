@@ -62,5 +62,23 @@ namespace GUI
             ThemLop tl = new ThemLop();
             tl.Show();
         }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MonHoc mh = new MonHoc();
+            mh.Show();
+        }
+
+        private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void họcKìToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HOCKI hk = new HOCKI();
+            hk.Show();
+
+        }
     }
 }

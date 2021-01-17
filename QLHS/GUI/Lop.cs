@@ -78,23 +78,23 @@ namespace GUI
             if (cb_khoi.Text == "Khối 10")
             {
                 cb_lop.Items.Clear();
-                cb_lop.Items.Add("A1");
-                cb_lop.Items.Add("A2");
-                cb_lop.Items.Add("A3");
-                cb_lop.Items.Add("A4");
+                cb_lop.Items.Add("10A1");
+                cb_lop.Items.Add("10A2");
+                cb_lop.Items.Add("10A3");
+                cb_lop.Items.Add("10A4");
             }
             if (cb_khoi.Text == "Khối 11")
             {
                 cb_lop.Items.Clear();
-                cb_lop.Items.Add("A1");
-                cb_lop.Items.Add("A2");
-                cb_lop.Items.Add("A3");
+                cb_lop.Items.Add("11A1");
+                cb_lop.Items.Add("11A2");
+                cb_lop.Items.Add("11A3");
             }
             if (cb_khoi.Text == "Khối 12")
             {
                 cb_lop.Items.Clear();
-                cb_lop.Items.Add("A1");
-                cb_lop.Items.Add("A2");
+                cb_lop.Items.Add("12A1");
+                cb_lop.Items.Add("12A2");
             }
         }
 
@@ -121,12 +121,10 @@ namespace GUI
                 QLHS_DTO hs = new QLHS_DTO();
                 hs.MaHocSinh = txt_mahocsinh.Text;
                 DataTable dt = bus.TIMHSBANGMA(hs.MaHocSinh);
-                cb_khoi.DataSource = dt;
-                cb_khoi.DisplayMember = "TenKhoiLop";
-                cb_lop.DataSource = dt;
-                cb_lop.DisplayMember = "TenLop";
                 txt_tenhocsinh.Text = dt.Rows[0]["HoTen"].ToString();
-                txt_namsinh.Text = dt.Rows[0]["NgaySinh"].ToString();
+                dt_ngaysinh.Format = DateTimePickerFormat.Custom;
+                dt_ngaysinh.CustomFormat = "dd/MM/yyyy";
+                dt_ngaysinh.Text = dt.Rows[0]["NgaySinh"].ToString();
             }
             catch (Exception ex)
             {
@@ -142,6 +140,22 @@ namespace GUI
         private void txt_namsinh_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            QLHS_DTO hs = new QLHS_DTO();
+            hs.MaHocSinh = txt_mahocsinh.Text;
+            hs.HoTen = txt_tenhocsinh.Text;
+            hs.TenKhoiLop = cb_khoi.Text;
+            hs.TenLop = cb_lop.Text;
+
+            
+            QLHS_BUS bus = new QLHS_BUS();
+            
+            bus.ThemHSVaoLop(hs.TenLop);
+            MessageBox.Show("Thêm thành công học sinh vào lớp " + cb_lop.Text + " !", "Thông báo");
+            LoadData();
         }
     }
 }

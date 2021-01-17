@@ -41,9 +41,9 @@ namespace GUI
             this.label5 = new System.Windows.Forms.Label();
             this.cb_khoi = new System.Windows.Forms.ComboBox();
             this.txt_mahocsinh = new System.Windows.Forms.TextBox();
-            this.txt_namsinh = new System.Windows.Forms.TextBox();
             this.txt_tenhocsinh = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dt_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@ namespace GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(427, 34);
+            this.label2.Location = new System.Drawing.Point(470, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 15);
             this.label2.TabIndex = 5;
@@ -135,9 +135,9 @@ namespace GUI
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(268, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Năm sinh";
+            this.label4.Text = "Ngày sinh";
             // 
             // label5
             // 
@@ -157,9 +157,9 @@ namespace GUI
             "Khối 10",
             "Khối 11",
             "Khối 12"});
-            this.cb_khoi.Location = new System.Drawing.Point(466, 27);
+            this.cb_khoi.Location = new System.Drawing.Point(509, 27);
             this.cb_khoi.Name = "cb_khoi";
-            this.cb_khoi.Size = new System.Drawing.Size(100, 27);
+            this.cb_khoi.Size = new System.Drawing.Size(77, 27);
             this.cb_khoi.TabIndex = 9;
             this.cb_khoi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -171,15 +171,6 @@ namespace GUI
             this.txt_mahocsinh.TabIndex = 10;
             this.txt_mahocsinh.TextChanged += new System.EventHandler(this.txt_mahocsinh_TextChanged);
             // 
-            // txt_namsinh
-            // 
-            this.txt_namsinh.Enabled = false;
-            this.txt_namsinh.Location = new System.Drawing.Point(331, 28);
-            this.txt_namsinh.Name = "txt_namsinh";
-            this.txt_namsinh.Size = new System.Drawing.Size(74, 26);
-            this.txt_namsinh.TabIndex = 11;
-            this.txt_namsinh.TextChanged += new System.EventHandler(this.txt_namsinh_TextChanged);
-            // 
             // txt_tenhocsinh
             // 
             this.txt_tenhocsinh.Enabled = false;
@@ -190,11 +181,11 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dt_ngaysinh);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.cb_lop);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btn_them);
-            this.groupBox2.Controls.Add(this.txt_namsinh);
             this.groupBox2.Controls.Add(this.txt_mahocsinh);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cb_khoi);
@@ -209,6 +200,15 @@ namespace GUI
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học sinh";
+            // 
+            // dt_ngaysinh
+            // 
+            this.dt_ngaysinh.Enabled = false;
+            this.dt_ngaysinh.Location = new System.Drawing.Point(336, 28);
+            this.dt_ngaysinh.Name = "dt_ngaysinh";
+            this.dt_ngaysinh.Size = new System.Drawing.Size(112, 26);
+            this.dt_ngaysinh.TabIndex = 18;
+            this.dt_ngaysinh.Value = new System.DateTime(2021, 1, 16, 22, 52, 56, 0);
             // 
             // pictureBox1
             // 
@@ -226,9 +226,9 @@ namespace GUI
             // 
             this.cb_lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_lop.FormattingEnabled = true;
-            this.cb_lop.Location = new System.Drawing.Point(466, 65);
+            this.cb_lop.Location = new System.Drawing.Point(509, 65);
             this.cb_lop.Name = "cb_lop";
-            this.cb_lop.Size = new System.Drawing.Size(100, 27);
+            this.cb_lop.Size = new System.Drawing.Size(77, 27);
             this.cb_lop.TabIndex = 16;
             this.cb_lop.DropDown += new System.EventHandler(this.cb_lop_DropDown);
             this.cb_lop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -238,7 +238,7 @@ namespace GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(432, 71);
+            this.label6.Location = new System.Drawing.Point(475, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 15);
             this.label6.TabIndex = 15;
@@ -253,6 +253,7 @@ namespace GUI
             this.btn_them.TabIndex = 14;
             this.btn_them.Text = "Thêm học sinh vào lớp";
             this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_tailai
             // 
@@ -302,7 +303,6 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_mahocsinh;
-        private System.Windows.Forms.TextBox txt_namsinh;
         private System.Windows.Forms.TextBox txt_tenhocsinh;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cb_lop;
@@ -310,5 +310,6 @@ namespace GUI
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_tailai;
+        private System.Windows.Forms.DateTimePicker dt_ngaysinh;
     }
 }

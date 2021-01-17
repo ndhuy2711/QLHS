@@ -58,17 +58,35 @@
     <Compile Include="BaoCaoTongKetHK_Mon.Designer.cs">
       <DependentUpon>BaoCaoTongKetHK_Mon.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOCKI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOCKI.Designer.cs">
+      <DependentUpon>HOCKI.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoiLop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KhoiLop.Designer.cs">
       <DependentUpon>KhoiLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonHoc.Designer.cs">
+      <DependentUpon>MonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhapBangDiemMon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhapBangDiemMon.Designer.cs">
       <DependentUpon>NhapBangDiemMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhapBangDiemMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapBangDiemMonHoc.Designer.cs">
+      <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="ThayDoiQuyDinh.cs">
       <SubType>Form</SubType>
@@ -114,14 +132,23 @@
     <EmbeddedResource Include="BaoCaoTongKetHK_Mon.resx">
       <DependentUpon>BaoCaoTongKetHK_Mon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOCKI.resx">
+      <DependentUpon>HOCKI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoiLop.resx">
       <DependentUpon>KhoiLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lop.resx">
       <DependentUpon>Lop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MonHoc.resx">
+      <DependentUpon>MonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapBangDiemMon.resx">
       <DependentUpon>NhapBangDiemMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapBangDiemMonHoc.resx">
+      <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiQuyDinh.resx">
       <DependentUpon>ThayDoiQuyDinh.cs</DependentUpon>
