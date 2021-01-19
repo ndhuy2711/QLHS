@@ -45,13 +45,11 @@ namespace GUI
 
         private void btn_themmon_Click(object sender, EventArgs e)
         {
-            QLHS_DTO hs = new QLHS_DTO();
-            hs.MaMonHoc = txt_mamonhoc.Text;
-            hs.TenMonHoc = txt_tenmonhoc.Text;
-            QLHS_BUS bus = new QLHS_BUS();
-            bus.ThemMonHoc(hs);
-            MessageBox.Show("Thêm thành công môn học " + txt_tenmonhoc.Text + " !", "Thông báo");
-            LoadData();
+            txt_mamonhoc.Text = "";
+            txt_tenmonhoc.Text = "";
+            btn_themmon.Visible = false;
+            btn_XacNhan.Visible = true;
+           
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -113,15 +111,30 @@ namespace GUI
             txt_tenmonhoc.Text = dtgv_danhsachmonhoc.Rows[i].Cells[1].Value.ToString();
         }
 
-        private void btn_nhapdiemmonhoc_Click(object sender, EventArgs e)
-        {
-            NhapBangDiemMon nbdmh = new NhapBangDiemMon();
-            nbdmh.Show();
-        }
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_XacNhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QLHS_DTO hs = new QLHS_DTO();
+                hs.MaMonHoc = txt_mamonhoc.Text;
+                hs.TenMonHoc = txt_tenmonhoc.Text;
+                QLHS_BUS bus = new QLHS_BUS();
+                bus.ThemMonHoc(hs);
+                MessageBox.Show("Thêm thành công môn học " + txt_tenmonhoc.Text + " !", "Thông báo");
+                LoadData();
+                btn_themmon.Visible = true;
+                btn_XacNhan.Visible = false;
+            }
+            catch
+            {
+                MessageBox.Show("Error: Lỗi Database! Failed");
+            }
         }
     }
 }

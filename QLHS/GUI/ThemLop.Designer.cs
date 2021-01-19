@@ -32,8 +32,11 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemLop));
             this.dtgv_themlop = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_Khoi_LopHoc = new System.Windows.Forms.ComboBox();
             this.btn_xoalop = new System.Windows.Forms.Button();
+            this.btn_Luu_Lai = new System.Windows.Forms.Button();
             this.btn_capnhatlop = new System.Windows.Forms.Button();
+            this.btn_XacNhan = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@ namespace GUI
             this.btn_xeplop = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_XacNhan = new System.Windows.Forms.Button();
-            this.btn_Luu_Lai = new System.Windows.Forms.Button();
-            this.cb_Khoi_LopHoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_themlop)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,14 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm lớp";
             // 
+            // cb_Khoi_LopHoc
+            // 
+            this.cb_Khoi_LopHoc.FormattingEnabled = true;
+            this.cb_Khoi_LopHoc.Location = new System.Drawing.Point(390, 35);
+            this.cb_Khoi_LopHoc.Name = "cb_Khoi_LopHoc";
+            this.cb_Khoi_LopHoc.Size = new System.Drawing.Size(103, 25);
+            this.cb_Khoi_LopHoc.TabIndex = 10;
+            // 
             // btn_xoalop
             // 
             this.btn_xoalop.Location = new System.Drawing.Point(329, 114);
@@ -95,6 +103,17 @@ namespace GUI
             this.btn_xoalop.UseVisualStyleBackColor = true;
             this.btn_xoalop.Click += new System.EventHandler(this.btn_xoalop_Click);
             // 
+            // btn_Luu_Lai
+            // 
+            this.btn_Luu_Lai.Location = new System.Drawing.Point(208, 114);
+            this.btn_Luu_Lai.Name = "btn_Luu_Lai";
+            this.btn_Luu_Lai.Size = new System.Drawing.Size(115, 35);
+            this.btn_Luu_Lai.TabIndex = 8;
+            this.btn_Luu_Lai.Text = "Lưu Cập Nhật";
+            this.btn_Luu_Lai.UseVisualStyleBackColor = true;
+            this.btn_Luu_Lai.Visible = false;
+            this.btn_Luu_Lai.Click += new System.EventHandler(this.btn_Luu_Lai_Click);
+            // 
             // btn_capnhatlop
             // 
             this.btn_capnhatlop.Location = new System.Drawing.Point(208, 114);
@@ -104,6 +123,17 @@ namespace GUI
             this.btn_capnhatlop.Text = "Cập nhật lớp";
             this.btn_capnhatlop.UseVisualStyleBackColor = true;
             this.btn_capnhatlop.Click += new System.EventHandler(this.btn_capnhatlop_Click);
+            // 
+            // btn_XacNhan
+            // 
+            this.btn_XacNhan.Location = new System.Drawing.Point(110, 114);
+            this.btn_XacNhan.Name = "btn_XacNhan";
+            this.btn_XacNhan.Size = new System.Drawing.Size(92, 35);
+            this.btn_XacNhan.TabIndex = 7;
+            this.btn_XacNhan.Text = "Xác Nhận";
+            this.btn_XacNhan.UseVisualStyleBackColor = true;
+            this.btn_XacNhan.Visible = false;
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
             // btn_them
             // 
@@ -207,36 +237,6 @@ namespace GUI
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách lớp học";
-            // 
-            // btn_XacNhan
-            // 
-            this.btn_XacNhan.Location = new System.Drawing.Point(110, 114);
-            this.btn_XacNhan.Name = "btn_XacNhan";
-            this.btn_XacNhan.Size = new System.Drawing.Size(92, 35);
-            this.btn_XacNhan.TabIndex = 7;
-            this.btn_XacNhan.Text = "Xác Nhận";
-            this.btn_XacNhan.UseVisualStyleBackColor = true;
-            this.btn_XacNhan.Visible = false;
-            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
-            // 
-            // btn_Luu_Lai
-            // 
-            this.btn_Luu_Lai.Location = new System.Drawing.Point(208, 114);
-            this.btn_Luu_Lai.Name = "btn_Luu_Lai";
-            this.btn_Luu_Lai.Size = new System.Drawing.Size(115, 35);
-            this.btn_Luu_Lai.TabIndex = 8;
-            this.btn_Luu_Lai.Text = "Lưu Cập Nhật";
-            this.btn_Luu_Lai.UseVisualStyleBackColor = true;
-            this.btn_Luu_Lai.Visible = false;
-            this.btn_Luu_Lai.Click += new System.EventHandler(this.btn_Luu_Lai_Click);
-            // 
-            // cb_Khoi_LopHoc
-            // 
-            this.cb_Khoi_LopHoc.FormattingEnabled = true;
-            this.cb_Khoi_LopHoc.Location = new System.Drawing.Point(390, 35);
-            this.cb_Khoi_LopHoc.Name = "cb_Khoi_LopHoc";
-            this.cb_Khoi_LopHoc.Size = new System.Drawing.Size(103, 25);
-            this.cb_Khoi_LopHoc.TabIndex = 10;
             // 
             // ThemLop
             // 

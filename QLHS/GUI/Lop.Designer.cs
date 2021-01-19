@@ -95,6 +95,7 @@ namespace GUI
             this.dtgv_danhsachlop.Name = "dtgv_danhsachlop";
             this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 158);
             this.dtgv_danhsachlop.TabIndex = 0;
+            this.dtgv_danhsachlop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachlop_CellContentClick);
             // 
             // btn_thoat
             // 

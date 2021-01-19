@@ -124,5 +124,10 @@ namespace GUI
             cb_lop.DisplayMember = "MaLop";
             cb_lop.ValueMember = "MaLop";
         }
+
+        private void dtgv_danhsachlop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

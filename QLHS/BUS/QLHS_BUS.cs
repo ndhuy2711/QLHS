@@ -23,6 +23,7 @@ namespace BUS
                 throw ex;
             }
         }
+
         public DataTable LayTatCaMonHoc()
         {
             try
@@ -35,6 +36,68 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable LayTatCaBangDiem()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayTatCaBangDiem();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable LayDSMonHoc()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayDSMonHoc();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable TIMKIEMTHEOHOTEN(string hoten)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.TIMKIEMTHEOHOTEN(hoten);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable ThamSo()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThamSo();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable LayMaMH(string tenmh)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayMaMH(tenmh);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        
         public DataTable LayTatCaHocKi()
         {
             try
@@ -96,6 +159,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable TIMKIEMDSHS()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.TIMKIEMDSHS();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public DataTable TIMHSBANGMA(string MaHocSinh)
         {
             try
@@ -150,6 +225,18 @@ namespace BUS
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.ThemMonHoc(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int ThemBangDiem(QLHS_DTO hs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThemBangDiem(hs);
             }
             catch (SqlException ex)
             {
@@ -217,7 +304,7 @@ namespace BUS
                 throw ex;
             }
         }
-        public int XoaHocSinh(QLHS_DTO ma)
+        public int XoaHocSinh(string ma)
         {
             try
             {

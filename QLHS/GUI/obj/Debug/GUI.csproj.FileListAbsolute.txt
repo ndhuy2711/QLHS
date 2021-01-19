@@ -35,7 +35,6 @@ C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.csproj
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.BaoCaoTongKetHK_Lop.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.BaoCaoTongKetHK_Mon.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.Lop.resources
-C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.NhapBangDiemMon.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.ThayDoiQuyDinh.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.frmTiepNhanHS.resources
 C:\Users\ndhuy\OneDrive\Máy tính\New folder\QLHS\QLHS\GUI\obj\Debug\GUI.Properties.Resources.resources

@@ -98,7 +98,7 @@ namespace GUI
             // 
             // btn_themkhoilop
             // 
-            this.btn_themkhoilop.Location = new System.Drawing.Point(23, 81);
+            this.btn_themkhoilop.Location = new System.Drawing.Point(29, 81);
             this.btn_themkhoilop.Name = "btn_themkhoilop";
             this.btn_themkhoilop.Size = new System.Drawing.Size(94, 35);
             this.btn_themkhoilop.TabIndex = 4;

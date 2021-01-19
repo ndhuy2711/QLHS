@@ -76,12 +76,6 @@
     <Compile Include="MonHoc.Designer.cs">
       <DependentUpon>MonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhapBangDiemMon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhapBangDiemMon.Designer.cs">
-      <DependentUpon>NhapBangDiemMon.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhapBangDiemMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,9 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonHoc.resx">
       <DependentUpon>MonHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhapBangDiemMon.resx">
-      <DependentUpon>NhapBangDiemMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapBangDiemMonHoc.resx">
       <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>

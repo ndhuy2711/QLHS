@@ -30,15 +30,15 @@ namespace GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_timkiemtheoten = new System.Windows.Forms.TextBox();
+            this.btn_timkiem = new System.Windows.Forms.Button();
+            this.txt_diachi = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_tenlop = new System.Windows.Forms.TextBox();
+            this.txt_gioitinh = new System.Windows.Forms.TextBox();
+            this.txt_hoten = new System.Windows.Forms.TextBox();
+            this.txt_mahocsinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,22 +46,24 @@ namespace GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_Timkiem = new System.Windows.Forms.DataGridView();
+            this.txt_NgaySinh = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Timkiem)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txt_timkiemtheoten);
+            this.groupBox1.Controls.Add(this.btn_timkiem);
+            this.groupBox1.Controls.Add(this.txt_diachi);
+            this.groupBox1.Controls.Add(this.txt_email);
+            this.groupBox1.Controls.Add(this.txt_tenlop);
+            this.groupBox1.Controls.Add(this.txt_NgaySinh);
+            this.groupBox1.Controls.Add(this.txt_gioitinh);
+            this.groupBox1.Controls.Add(this.txt_hoten);
+            this.groupBox1.Controls.Add(this.txt_mahocsinh);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -77,80 +79,81 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tra cứu học sinh";
             // 
-            // button2
+            // label8
             // 
-            this.button2.Location = new System.Drawing.Point(317, 155);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(368, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Tìm kiếm theo tên";
             // 
-            // button1
+            // txt_timkiemtheoten
             // 
-            this.button1.Location = new System.Drawing.Point(172, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 32);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txt_timkiemtheoten.Location = new System.Drawing.Point(367, 165);
+            this.txt_timkiemtheoten.Name = "txt_timkiemtheoten";
+            this.txt_timkiemtheoten.Size = new System.Drawing.Size(215, 22);
+            this.txt_timkiemtheoten.TabIndex = 15;
             // 
-            // textBox7
+            // btn_timkiem
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(366, 90);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(180, 43);
-            this.textBox7.TabIndex = 13;
+            this.btn_timkiem.Location = new System.Drawing.Point(287, 165);
+            this.btn_timkiem.Name = "btn_timkiem";
+            this.btn_timkiem.Size = new System.Drawing.Size(75, 22);
+            this.btn_timkiem.TabIndex = 14;
+            this.btn_timkiem.Text = "Tìm kiếm";
+            this.btn_timkiem.UseVisualStyleBackColor = true;
+            this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
-            // textBox6
+            // txt_diachi
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(366, 64);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(180, 22);
-            this.textBox6.TabIndex = 12;
+            this.txt_diachi.Enabled = false;
+            this.txt_diachi.Location = new System.Drawing.Point(366, 90);
+            this.txt_diachi.Multiline = true;
+            this.txt_diachi.Name = "txt_diachi";
+            this.txt_diachi.Size = new System.Drawing.Size(200, 43);
+            this.txt_diachi.TabIndex = 13;
             // 
-            // textBox5
+            // txt_email
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(366, 38);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(83, 22);
-            this.textBox5.TabIndex = 11;
+            this.txt_email.Enabled = false;
+            this.txt_email.Location = new System.Drawing.Point(366, 64);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(200, 22);
+            this.txt_email.TabIndex = 12;
             // 
-            // textBox4
+            // txt_tenlop
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(88, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 22);
-            this.textBox4.TabIndex = 10;
+            this.txt_tenlop.Enabled = false;
+            this.txt_tenlop.Location = new System.Drawing.Point(366, 38);
+            this.txt_tenlop.Name = "txt_tenlop";
+            this.txt_tenlop.Size = new System.Drawing.Size(113, 22);
+            this.txt_tenlop.TabIndex = 11;
             // 
-            // textBox3
+            // txt_gioitinh
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(88, 87);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 22);
-            this.textBox3.TabIndex = 9;
+            this.txt_gioitinh.Enabled = false;
+            this.txt_gioitinh.Location = new System.Drawing.Point(88, 87);
+            this.txt_gioitinh.Name = "txt_gioitinh";
+            this.txt_gioitinh.Size = new System.Drawing.Size(168, 22);
+            this.txt_gioitinh.TabIndex = 9;
             // 
-            // textBox2
+            // txt_hoten
             // 
-            this.textBox2.Location = new System.Drawing.Point(88, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 22);
-            this.textBox2.TabIndex = 8;
+            this.txt_hoten.Enabled = false;
+            this.txt_hoten.Location = new System.Drawing.Point(88, 61);
+            this.txt_hoten.Name = "txt_hoten";
+            this.txt_hoten.Size = new System.Drawing.Size(168, 22);
+            this.txt_hoten.TabIndex = 8;
             // 
-            // textBox1
+            // txt_mahocsinh
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 22);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_mahocsinh.Enabled = false;
+            this.txt_mahocsinh.Location = new System.Drawing.Point(88, 35);
+            this.txt_mahocsinh.Name = "txt_mahocsinh";
+            this.txt_mahocsinh.Size = new System.Drawing.Size(168, 22);
+            this.txt_mahocsinh.TabIndex = 7;
+            this.txt_mahocsinh.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
             // 
@@ -182,11 +185,11 @@ namespace GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 116);
+            this.label4.Location = new System.Drawing.Point(7, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 15);
+            this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Năm sinh";
+            this.label4.Text = "Ngày sinh";
             // 
             // label3
             // 
@@ -215,13 +218,22 @@ namespace GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã học sinh";
             // 
-            // dataGridView1
+            // dtgv_Timkiem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 213);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(587, 181);
-            this.dataGridView1.TabIndex = 1;
+            this.dtgv_Timkiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Timkiem.Location = new System.Drawing.Point(13, 213);
+            this.dtgv_Timkiem.Name = "dtgv_Timkiem";
+            this.dtgv_Timkiem.Size = new System.Drawing.Size(587, 181);
+            this.dtgv_Timkiem.TabIndex = 1;
+            this.dtgv_Timkiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // txt_NgaySinh
+            // 
+            this.txt_NgaySinh.Enabled = false;
+            this.txt_NgaySinh.Location = new System.Drawing.Point(88, 115);
+            this.txt_NgaySinh.Name = "txt_NgaySinh";
+            this.txt_NgaySinh.Size = new System.Drawing.Size(168, 22);
+            this.txt_NgaySinh.TabIndex = 9;
             // 
             // TraCuuHS
             // 
@@ -229,7 +241,7 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(613, 406);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgv_Timkiem);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -238,7 +250,7 @@ namespace GUI
             this.Load += new System.EventHandler(this.TraCuuHS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Timkiem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,7 +258,7 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_mahocsinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -254,14 +266,15 @@ namespace GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_timkiem;
+        private System.Windows.Forms.TextBox txt_diachi;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.TextBox txt_tenlop;
+        private System.Windows.Forms.TextBox txt_gioitinh;
+        private System.Windows.Forms.TextBox txt_hoten;
+        private System.Windows.Forms.DataGridView dtgv_Timkiem;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_timkiemtheoten;
+        private System.Windows.Forms.TextBox txt_NgaySinh;
     }
 }

@@ -29,6 +29,26 @@ namespace DAL
                 provider.DisConnect();
             }
         }
+        public DataTable LayTatCaBangDiem()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT * FROM BANGDIEM";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+        
 
         public DataTable LayTatCaMonHoc()
         {
@@ -36,6 +56,45 @@ namespace DAL
             try
             {
                 string strSql = "SELECT * FROM MONHOC";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+
+        public DataTable LayDSMonHoc()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "select TenMonHoc from MONHOC";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+        public DataTable LayMaMH(string tenmh)
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "select MaMonHoc from MONHOC where TenMonHoc = N'"+ tenmh + "'";
                 provider.Connect(); ;
                 DataTable dt = provider.Select(CommandType.Text, strSql);
                 return dt;
@@ -167,6 +226,65 @@ namespace DAL
                 provider.DisConnect();
             }
         }
+        public DataTable TIMKIEMDSHS()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "EXEC dbo.TIMKIEMDSHS";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+
+        public DataTable ThamSo()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "select * from THAMSO";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+
+        public DataTable TIMKIEMTHEOHOTEN(string hoten)
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT HS.MaHocSinh, HS.HoTen, DSL.TenLop, HS.GioiTinh, HS.NgaySinh, HS.Email, HS.DiaChi FROM HOCSINH HS, KHOILOP KL, CHITIETDSLOP CTDSL, DANHSACHLOP DSL WHERE HS.MaHocSinh = CTDSL.MaHocSinh AND CTDSL.MaLop = DSL.MaLop AND DSL.MaKhoiLop = KL.MaKhoiLop and HS.HoTen like N'%"+ hoten + "%'";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
 
         public DataTable TIMHSBANGMA(string MaHocSinh)
         {
@@ -226,6 +344,33 @@ namespace DAL
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
                             new SqlParameter { ParameterName = "@MaMonHoc", Value = hs.MaMonHoc },
                             new SqlParameter { ParameterName = "@TenMonHoc", Value = hs.TenMonHoc }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public int ThemBangDiem(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "INSERT INTO BANGDIEM(MaBangDiem, MaHocSinh, MaMonHoc, Diem15phut, Diem1tiet, DiemCuoiKi) VALUES(dbo.UF_AUTO_MABD() , @MaHocSinh , @MaMonHoc , @Diem15phut , @Diem1tiet , @DiemCuoiKi)";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@MaHocSinh", Value = hs.MaHocSinh },
+                            new SqlParameter { ParameterName = "@MaMonHoc", Value = hs.MaMonHoc },
+                            new SqlParameter { ParameterName = "@Diem15phut", Value = hs.Diem15phut },
+                            new SqlParameter { ParameterName = "@Diem1tiet", Value = hs.Diem1tiet },
+                            new SqlParameter { ParameterName = "@DiemCuoiKi", Value = hs.DiemCuoiKi }
                     );
 
             }
@@ -405,16 +550,17 @@ namespace DAL
             return nRow;
         }
 
-        public int XoaHocSinh(QLHS_DTO ma)
+        public int XoaHocSinh(string ma)
         {
             int nRow = 0;
             DBConnect provider = new DBConnect();
             try
             {
-                string strSql = "DELETE FROM HOCSINH WHERE MaHocSinh = @MaHocSinh;";
+                string strSql = "DELETE FROM CHITIETDSLOP WHERE MaHocSinh = @MaHocSinh  DELETE FROM HOCSINH WHERE MaHocSinh = @MaHocSinh";
+                
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
-                            new SqlParameter { ParameterName = "@MaHocSinh", Value = ma.MaHocSinh }
+                            new SqlParameter { ParameterName = "@MaHocSinh", Value = ma }
                     );
 
             }

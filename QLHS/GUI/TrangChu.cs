@@ -80,5 +80,13 @@ namespace GUI
             hk.Show();
 
         }
+
+        private void nhậpBảngĐiểmMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NhapBangDiemMonHoc nbdmh = new NhapBangDiemMonHoc();
+
+            nbdmh.Show();
+
+        }
     }
 }

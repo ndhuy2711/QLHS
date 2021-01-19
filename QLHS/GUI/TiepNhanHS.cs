@@ -36,6 +36,7 @@ namespace GUI
                     RowSelected.DiaChi = dtgv_danhsachhocsinh.SelectedRows[0].Cells["DiaChi"].Value.ToString();
                     RowSelected.Email = dtgv_danhsachhocsinh.SelectedRows[0].Cells["Email"].Value.ToString();
                 }
+
             }
             catch (Exception ex)
             {
@@ -53,13 +54,16 @@ namespace GUI
 
         private void btn_hoanthanh_Click(object sender, EventArgs e)
         {
+            QLHS_BUS bus = new QLHS_BUS();
             int nam = int.Parse(DateTime.Now.Year.ToString());
             int dtp = int.Parse(dt_ngaysinh.Value.Year.ToString());
             int t = nam - dtp;
-            
+            DataTable dt = bus.ThamSo();
+            //MessageBox.Show(dt.Rows[0]["TuoiToiThieu"].ToString());
+            //MessageBox.Show(dt.Rows[0]["TuoiToiDa"].ToString());
             try
             {
-                if (14 < t && t < 21)
+                if (Int32.Parse(dt.Rows[0]["TuoiToiThieu"].ToString()) < t && t < Int32.Parse(dt.Rows[0]["TuoiToiDa"].ToString()))
                 {
                     if((txt_hovaten.Text != "") && (dt_ngaysinh.Value.ToString() != "") && (cb_gioitinh.Text != "") && (txt_diachi.Text != "") && (txt_email.Text != "") )
                     {
@@ -70,7 +74,6 @@ namespace GUI
                         hs.GioiTinh = cb_gioitinh.Text;
                         hs.DiaChi = txt_diachi.Text;
                         hs.Email = txt_email.Text;
-                        QLHS_BUS bus = new QLHS_BUS();
                         bus.ThemHocSinh(hs);
                         MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
                         LoadData();
@@ -111,9 +114,8 @@ namespace GUI
                 if(DialogResult.Yes == DR)
                 {
                     QLHS_DTO hs = new QLHS_DTO();
-                    hs.MaHocSinh = txt_mahocsinh.Text;
                     QLHS_BUS bus = new QLHS_BUS();
-                    bus.XoaHocSinh(hs);
+                    bus.XoaHocSinh(txt_mahocsinh.Text);
                     MessageBox.Show("Xoá thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
                     LoadData();
                 }

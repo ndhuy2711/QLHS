@@ -33,6 +33,7 @@ namespace GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_mahocsinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_ThemHS = new System.Windows.Forms.Button();
             this.btn_hoanthanh = new System.Windows.Forms.Button();
             this.dt_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.txt_diachi = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@ namespace GUI
             this.btn_capnhathocsinh = new System.Windows.Forms.Button();
             this.btn_tailai = new System.Windows.Forms.Button();
             this.btn_Luu_HS = new System.Windows.Forms.Button();
-            this.btn_ThemHS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhocsinh)).BeginInit();
@@ -96,6 +96,16 @@ namespace GUI
             this.label6.Size = new System.Drawing.Size(83, 15);
             this.label6.TabIndex = 11;
             this.label6.Text = "Mã học sinh : ";
+            // 
+            // btn_ThemHS
+            // 
+            this.btn_ThemHS.Location = new System.Drawing.Point(541, 175);
+            this.btn_ThemHS.Name = "btn_ThemHS";
+            this.btn_ThemHS.Size = new System.Drawing.Size(161, 35);
+            this.btn_ThemHS.TabIndex = 10;
+            this.btn_ThemHS.Text = "Thêm Học Sinh";
+            this.btn_ThemHS.UseVisualStyleBackColor = true;
+            this.btn_ThemHS.Click += new System.EventHandler(this.btn_ThemHS_Click);
             // 
             // btn_hoanthanh
             // 
@@ -263,16 +273,6 @@ namespace GUI
             this.btn_Luu_HS.UseVisualStyleBackColor = true;
             this.btn_Luu_HS.Visible = false;
             this.btn_Luu_HS.Click += new System.EventHandler(this.btn_Luu_HS_Click);
-            // 
-            // btn_ThemHS
-            // 
-            this.btn_ThemHS.Location = new System.Drawing.Point(541, 175);
-            this.btn_ThemHS.Name = "btn_ThemHS";
-            this.btn_ThemHS.Size = new System.Drawing.Size(161, 35);
-            this.btn_ThemHS.TabIndex = 10;
-            this.btn_ThemHS.Text = "Thêm Học Sinh";
-            this.btn_ThemHS.UseVisualStyleBackColor = true;
-            this.btn_ThemHS.Click += new System.EventHandler(this.btn_ThemHS_Click);
             // 
             // frmTiepNhanHS
             // 
