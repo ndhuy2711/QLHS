@@ -88,6 +88,46 @@ namespace DAL
                 provider.DisConnect();
             }
         }
+
+        public DataTable LayLopHoc(string makhoilop)
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT MaLop FROM DANHSACHLOP where MaKhoiLop = '"+ makhoilop + "'";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
+
+        public DataTable LayKhoiLop()
+        {
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "SELECT MaKhoiLop FROM KHOILOP";
+                provider.Connect(); ;
+                DataTable dt = provider.Select(CommandType.Text, strSql);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+        }
         public DataTable LayTatCaHocKi()
         {
             DBConnect provider = new DBConnect();
@@ -199,17 +239,17 @@ namespace DAL
             }
             return nRow;
         }
-        public int ThemKhoiLop(QLHS_DTO hs)
+        public int ThemDSLop(string malop, string mahs)
         {
             int nRow = 0;
             DBConnect provider = new DBConnect();
             try
             {
-                string strSql = "INSERT INTO KHOILOP(MaKhoiLop, TenKhoiLop) VALUES(@MaKhoiLop, @TenKhoiLop)";
+                string strSql = "EXEC USP_CHITIETDSLOP @Malop , @MaHS";
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
-                            new SqlParameter { ParameterName = "@MaKhoiLop", Value = hs.MaKhoiLop },
-                            new SqlParameter { ParameterName = "@TenKhoiLop", Value = hs.TenKhoiLop }
+                            new SqlParameter { ParameterName = "@Malop", Value = malop },
+                            new SqlParameter { ParameterName = "@MaHS", Value = mahs }
                     );
 
             }
@@ -221,6 +261,52 @@ namespace DAL
             {
                 provider.DisConnect();
             }
+            return nRow;
+        }
+
+        public bool Check_MaKL(string malop)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            string strSql = "Select * from KHOILOP where MaKhoiLop = @MaKhoiLop";
+            provider.Connect();
+            nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                        new SqlParameter { ParameterName = "@MaKhoiLop", Value = malop }
+                );
+            if (nRow > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public int ThemKhoiLop(QLHS_DTO hs)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            if (Check_MaKL(hs.MaKhoiLop) == true)
+            {
+                try
+                {
+                    string strSql = "INSERT INTO KHOILOP(MaKhoiLop, TenKhoiLop) VALUES(@MaKhoiLop, @TenKhoiLop)";
+                    provider.Connect();
+                    nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                                new SqlParameter { ParameterName = "@MaKhoiLop", Value = hs.MaKhoiLop },
+                                new SqlParameter { ParameterName = "@TenKhoiLop", Value = hs.TenKhoiLop }
+                        );
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    provider.DisConnect();
+                }
+        }
             return nRow;
         }
         public int ThemLop(QLHS_DTO hs)

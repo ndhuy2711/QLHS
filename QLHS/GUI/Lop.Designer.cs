@@ -44,7 +44,6 @@ namespace GUI
             this.txt_tenhocsinh = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dt_ngaysinh = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_them = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@ namespace GUI
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachlop)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,12 +89,12 @@ namespace GUI
             // 
             // dtgv_danhsachlop
             // 
+            this.dtgv_danhsachlop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_danhsachlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachlop.Location = new System.Drawing.Point(4, 25);
             this.dtgv_danhsachlop.Name = "dtgv_danhsachlop";
             this.dtgv_danhsachlop.Size = new System.Drawing.Size(501, 158);
             this.dtgv_danhsachlop.TabIndex = 0;
-            this.dtgv_danhsachlop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachlop_CellContentClick);
             // 
             // btn_thoat
             // 
@@ -153,21 +151,17 @@ namespace GUI
             // 
             this.cb_khoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_khoi.FormattingEnabled = true;
-            this.cb_khoi.Items.AddRange(new object[] {
-            "Khối 10",
-            "Khối 11",
-            "Khối 12"});
             this.cb_khoi.Location = new System.Drawing.Point(509, 27);
             this.cb_khoi.Name = "cb_khoi";
             this.cb_khoi.Size = new System.Drawing.Size(77, 27);
             this.cb_khoi.TabIndex = 9;
-            this.cb_khoi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cb_khoi.SelectedIndexChanged += new System.EventHandler(this.cb_khoi_SelectedIndexChanged);
             // 
             // txt_mahocsinh
             // 
             this.txt_mahocsinh.Location = new System.Drawing.Point(89, 28);
             this.txt_mahocsinh.Name = "txt_mahocsinh";
-            this.txt_mahocsinh.Size = new System.Drawing.Size(125, 26);
+            this.txt_mahocsinh.Size = new System.Drawing.Size(156, 26);
             this.txt_mahocsinh.TabIndex = 10;
             this.txt_mahocsinh.TextChanged += new System.EventHandler(this.txt_mahocsinh_TextChanged);
             // 
@@ -182,7 +176,6 @@ namespace GUI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dt_ngaysinh);
-            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.cb_lop);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btn_them);
@@ -210,18 +203,6 @@ namespace GUI
             this.dt_ngaysinh.TabIndex = 18;
             this.dt_ngaysinh.Value = new System.DateTime(2021, 1, 16, 22, 52, 56, 0);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
             // cb_lop
             // 
             this.cb_lop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -230,9 +211,6 @@ namespace GUI
             this.cb_lop.Name = "cb_lop";
             this.cb_lop.Size = new System.Drawing.Size(77, 27);
             this.cb_lop.TabIndex = 16;
-            this.cb_lop.DropDown += new System.EventHandler(this.cb_lop_DropDown);
-            this.cb_lop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            this.cb_lop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cb_lop_MouseClick);
             // 
             // label6
             // 
@@ -285,7 +263,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachlop)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +285,6 @@ namespace GUI
         private System.Windows.Forms.ComboBox cb_lop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_them;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_tailai;
         private System.Windows.Forms.DateTimePicker dt_ngaysinh;
     }

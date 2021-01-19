@@ -46,11 +46,11 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgv_danhsachhocsinh = new System.Windows.Forms.DataGridView();
-            this.btn_xeplophocsinh = new System.Windows.Forms.Button();
             this.btn_xoahocsinh = new System.Windows.Forms.Button();
             this.btn_capnhathocsinh = new System.Windows.Forms.Button();
             this.btn_tailai = new System.Windows.Forms.Button();
-            this.btn_themkhoilop = new System.Windows.Forms.Button();
+            this.btn_Luu_HS = new System.Windows.Forms.Button();
+            this.btn_ThemHS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhocsinh)).BeginInit();
@@ -60,6 +60,7 @@ namespace GUI
             // 
             this.groupBox1.Controls.Add(this.txt_mahocsinh);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btn_ThemHS);
             this.groupBox1.Controls.Add(this.btn_hoanthanh);
             this.groupBox1.Controls.Add(this.dt_ngaysinh);
             this.groupBox1.Controls.Add(this.txt_diachi);
@@ -98,12 +99,13 @@ namespace GUI
             // 
             // btn_hoanthanh
             // 
-            this.btn_hoanthanh.Location = new System.Drawing.Point(272, 170);
+            this.btn_hoanthanh.Location = new System.Drawing.Point(541, 175);
             this.btn_hoanthanh.Name = "btn_hoanthanh";
             this.btn_hoanthanh.Size = new System.Drawing.Size(161, 35);
             this.btn_hoanthanh.TabIndex = 10;
             this.btn_hoanthanh.Text = "Hoàn Thành";
             this.btn_hoanthanh.UseVisualStyleBackColor = true;
+            this.btn_hoanthanh.Visible = false;
             this.btn_hoanthanh.Click += new System.EventHandler(this.btn_hoanthanh_Click);
             // 
             // dt_ngaysinh
@@ -113,7 +115,6 @@ namespace GUI
             this.dt_ngaysinh.Size = new System.Drawing.Size(214, 22);
             this.dt_ngaysinh.TabIndex = 1;
             this.dt_ngaysinh.Value = new System.DateTime(2020, 12, 28, 0, 0, 0, 0);
-            this.dt_ngaysinh.ValueChanged += new System.EventHandler(this.dt_ngaysinh_ValueChanged);
             // 
             // txt_diachi
             // 
@@ -209,6 +210,7 @@ namespace GUI
             // 
             // dtgv_danhsachhocsinh
             // 
+            this.dtgv_danhsachhocsinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_danhsachhocsinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachhocsinh.Location = new System.Drawing.Point(6, 22);
             this.dtgv_danhsachhocsinh.Name = "dtgv_danhsachhocsinh";
@@ -217,22 +219,10 @@ namespace GUI
             this.dtgv_danhsachhocsinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachhocsinh_CellClick);
             this.dtgv_danhsachhocsinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachhocsinh_CellContentClick);
             // 
-            // btn_xeplophocsinh
-            // 
-            this.btn_xeplophocsinh.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.btn_xeplophocsinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xeplophocsinh.Location = new System.Drawing.Point(606, 459);
-            this.btn_xeplophocsinh.Name = "btn_xeplophocsinh";
-            this.btn_xeplophocsinh.Size = new System.Drawing.Size(114, 50);
-            this.btn_xeplophocsinh.TabIndex = 11;
-            this.btn_xeplophocsinh.Text = "Lập danh sách lóp";
-            this.btn_xeplophocsinh.UseVisualStyleBackColor = true;
-            this.btn_xeplophocsinh.Click += new System.EventHandler(this.btn_xeplophocsinh_Click);
-            // 
             // btn_xoahocsinh
             // 
             this.btn_xoahocsinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoahocsinh.Location = new System.Drawing.Point(606, 353);
+            this.btn_xoahocsinh.Location = new System.Drawing.Point(606, 463);
             this.btn_xoahocsinh.Name = "btn_xoahocsinh";
             this.btn_xoahocsinh.Size = new System.Drawing.Size(114, 35);
             this.btn_xoahocsinh.TabIndex = 11;
@@ -243,7 +233,7 @@ namespace GUI
             // btn_capnhathocsinh
             // 
             this.btn_capnhathocsinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_capnhathocsinh.Location = new System.Drawing.Point(606, 312);
+            this.btn_capnhathocsinh.Location = new System.Drawing.Point(606, 413);
             this.btn_capnhathocsinh.Name = "btn_capnhathocsinh";
             this.btn_capnhathocsinh.Size = new System.Drawing.Size(114, 35);
             this.btn_capnhathocsinh.TabIndex = 12;
@@ -254,7 +244,7 @@ namespace GUI
             // btn_tailai
             // 
             this.btn_tailai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tailai.Location = new System.Drawing.Point(607, 271);
+            this.btn_tailai.Location = new System.Drawing.Point(605, 363);
             this.btn_tailai.Name = "btn_tailai";
             this.btn_tailai.Size = new System.Drawing.Size(114, 35);
             this.btn_tailai.TabIndex = 13;
@@ -262,17 +252,27 @@ namespace GUI
             this.btn_tailai.UseVisualStyleBackColor = true;
             this.btn_tailai.Click += new System.EventHandler(this.btn_tailai_Click);
             // 
-            // btn_themkhoilop
+            // btn_Luu_HS
             // 
-            this.btn_themkhoilop.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.btn_themkhoilop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_themkhoilop.Location = new System.Drawing.Point(606, 403);
-            this.btn_themkhoilop.Name = "btn_themkhoilop";
-            this.btn_themkhoilop.Size = new System.Drawing.Size(114, 50);
-            this.btn_themkhoilop.TabIndex = 14;
-            this.btn_themkhoilop.Text = "Thêm khối lớp";
-            this.btn_themkhoilop.UseVisualStyleBackColor = true;
-            this.btn_themkhoilop.Click += new System.EventHandler(this.btn_themkhoilop_Click);
+            this.btn_Luu_HS.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Luu_HS.Location = new System.Drawing.Point(605, 412);
+            this.btn_Luu_HS.Name = "btn_Luu_HS";
+            this.btn_Luu_HS.Size = new System.Drawing.Size(114, 35);
+            this.btn_Luu_HS.TabIndex = 12;
+            this.btn_Luu_HS.Text = "Lưu Lại";
+            this.btn_Luu_HS.UseVisualStyleBackColor = true;
+            this.btn_Luu_HS.Visible = false;
+            this.btn_Luu_HS.Click += new System.EventHandler(this.btn_Luu_HS_Click);
+            // 
+            // btn_ThemHS
+            // 
+            this.btn_ThemHS.Location = new System.Drawing.Point(541, 175);
+            this.btn_ThemHS.Name = "btn_ThemHS";
+            this.btn_ThemHS.Size = new System.Drawing.Size(161, 35);
+            this.btn_ThemHS.TabIndex = 10;
+            this.btn_ThemHS.Text = "Thêm Học Sinh";
+            this.btn_ThemHS.UseVisualStyleBackColor = true;
+            this.btn_ThemHS.Click += new System.EventHandler(this.btn_ThemHS_Click);
             // 
             // frmTiepNhanHS
             // 
@@ -280,17 +280,17 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(733, 528);
-            this.Controls.Add(this.btn_themkhoilop);
             this.Controls.Add(this.btn_tailai);
+            this.Controls.Add(this.btn_Luu_HS);
             this.Controls.Add(this.btn_capnhathocsinh);
             this.Controls.Add(this.btn_xoahocsinh);
-            this.Controls.Add(this.btn_xeplophocsinh);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTiepNhanHS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tiếp nhận học sinh";
             this.Load += new System.EventHandler(this.frmTiepNhanHS_Load);
             this.groupBox1.ResumeLayout(false);
@@ -317,13 +317,13 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dtgv_danhsachhocsinh;
-        private System.Windows.Forms.Button btn_xeplophocsinh;
         private System.Windows.Forms.Button btn_xoahocsinh;
         private System.Windows.Forms.Button btn_capnhathocsinh;
         private System.Windows.Forms.Button btn_tailai;
         private System.Windows.Forms.TextBox txt_mahocsinh;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_themkhoilop;
+        private System.Windows.Forms.Button btn_Luu_HS;
+        private System.Windows.Forms.Button btn_ThemHS;
     }
 }
 

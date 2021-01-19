@@ -24,7 +24,11 @@ namespace GUI
             {
                 QLHS_BUS bus = new QLHS_BUS();
                 DataTable dt = bus.LayTatCaLop();
+                DataTable dt_1 = bus.LayKhoiLop();
                 dtgv_themlop.DataSource = dt;
+                cb_Khoi_LopHoc.DataSource = dt_1;
+                cb_Khoi_LopHoc.DisplayMember = "MaKhoiLop";
+                cb_Khoi_LopHoc.ValueMember = "MaKhoiLop ";
                 if (dt.Rows.Count > 0)
                 {
                     dtgv_themlop.Rows[0].Selected = true;
@@ -57,47 +61,33 @@ namespace GUI
             txt_malop.Text = dtgv_themlop.Rows[i].Cells[0].Value.ToString();
             txt_tenlop.Text = dtgv_themlop.Rows[i].Cells[1].Value.ToString();
             txt_siso.Text = dtgv_themlop.Rows[i].Cells[2].Value.ToString();
-            txt_makhoilop.Text = dtgv_themlop.Rows[i].Cells[3].Value.ToString();
+            cb_Khoi_LopHoc.Text = dtgv_themlop.Rows[i].Cells[3].Value.ToString();
         }
 
+        void ClearText()
+        {
+            txt_malop.Text = "";
+            txt_siso.Text = "";
+            txt_tenlop.Text = "";
+        }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            QLHS_DTO hs = new QLHS_DTO();
-            hs.MaLop = txt_malop.Text;
-            hs.TenLop = txt_tenlop.Text;
-            hs.SiSo = txt_siso.Text;
-            hs.MaKhoiLop = txt_makhoilop.Text;
-            QLHS_BUS bus = new QLHS_BUS();
-            bus.ThemLop(hs);
-            MessageBox.Show("Thêm thành công lớp " + txt_malop.Text + " !", "Thông báo");
-            LoadData();
+            btn_them.Visible = false;
+            ClearText();
+            btn_XacNhan.Visible = true;
         }
 
         private void btn_capnhatlop_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if ((txt_malop.Text != "") &&  (txt_tenlop.Text != "") && (txt_siso.Text != "") && (txt_makhoilop.Text != ""))
-                {
-                    QLHS_DTO hs = new QLHS_DTO();
-                    hs.MaLop = txt_malop.Text;
-                    hs.TenLop = txt_tenlop.Text;
-                    hs.SiSo = txt_siso.Text;
-                    hs.MaKhoiLop = txt_makhoilop.Text;
-                    QLHS_BUS bus = new QLHS_BUS();
-                    bus.CapNhatLop(hs);
-                    MessageBox.Show("Cập nhật thành công lớp " + txt_malop.Text + " !", "Thông báo");
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật không thành công! Mời bạn xem lại dữ liệu nhập! ", "Thông báo");
-                }
-            }
-            catch (Exception ex)
-            {
+            int index = dtgv_themlop.CurrentRow.Index;
+            btn_capnhatlop.Visible = false;
+            btn_Luu_Lai.Visible = true;
+            txt_malop.Enabled = false;
+            txt_malop.Text = dtgv_themlop.Rows[index].Cells[0].Value.ToString();
+            txt_tenlop.Text = dtgv_themlop.Rows[index].Cells[1].Value.ToString();
+            txt_siso.Text = dtgv_themlop.Rows[index].Cells[2].Value.ToString();
+            cb_Khoi_LopHoc.Text = dtgv_themlop.Rows[index].Cells[3].Value.ToString();
 
-            }
         }
 
         private void btn_xoalop_Click(object sender, EventArgs e)
@@ -135,6 +125,58 @@ namespace GUI
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_XacNhan_Click(object sender, EventArgs e)
+        {
+            btn_XacNhan.Visible = false;
+            btn_them.Visible = true;
+            try
+            {
+                QLHS_DTO hs = new QLHS_DTO();
+                hs.MaLop = txt_malop.Text;
+                hs.TenLop = txt_tenlop.Text;
+                hs.SiSo = txt_siso.Text;
+                hs.MaKhoiLop = cb_Khoi_LopHoc.Text;
+                QLHS_BUS bus = new QLHS_BUS();
+                bus.ThemLop(hs);
+                MessageBox.Show("Thêm thành công lớp " + txt_malop.Text + " !", "Thông báo");
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Mã lớp đã tồn tại!");
+            }
+        }
+
+        private void btn_Luu_Lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((txt_malop.Text != "") && (txt_tenlop.Text != "") && (txt_siso.Text != "") && (cb_Khoi_LopHoc.Text != ""))
+                {
+                    QLHS_DTO hs = new QLHS_DTO();
+                    hs.MaLop = txt_malop.Text;
+                    hs.TenLop = txt_tenlop.Text;
+                    hs.SiSo = txt_siso.Text;
+                    hs.MaKhoiLop = cb_Khoi_LopHoc.Text;
+                    QLHS_BUS bus = new QLHS_BUS();
+                    bus.CapNhatLop(hs);
+                    MessageBox.Show("Cập nhật thành công lớp " + txt_malop.Text + " !", "Thông báo");
+                    LoadData();
+                    btn_capnhatlop.Visible = true;
+                    btn_Luu_Lai.Visible = false;
+                    txt_malop.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật không thành công! Mời bạn xem lại dữ liệu nhập! ", "Thông báo");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

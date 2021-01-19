@@ -58,13 +58,20 @@ namespace GUI
 
         private void btn_themkhoilop_Click(object sender, EventArgs e)
         {
-            QLHS_DTO hs = new QLHS_DTO();
-            hs.MaKhoiLop = txt_makhoilop.Text;
-            hs.TenKhoiLop = txt_tenkhoilop.Text;
-            QLHS_BUS bus = new QLHS_BUS();
-            bus.ThemKhoiLop(hs);
-            MessageBox.Show("Thêm thành công khối lớp " + txt_tenkhoilop.Text + " !", "Thông báo");
-            LoadData();
+            try
+            {
+                QLHS_DTO hs = new QLHS_DTO();
+                hs.MaKhoiLop = txt_makhoilop.Text;
+                hs.TenKhoiLop = txt_tenkhoilop.Text;
+                QLHS_BUS bus = new QLHS_BUS();
+                bus.ThemKhoiLop(hs);
+                MessageBox.Show("Thêm thành công khối lớp " + txt_tenkhoilop.Text + " !", "Thông báo");
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Đã tồn tại mã Khối!");
+            }
         }
 
         private void btn_xoakhoilop_Click(object sender, EventArgs e)
@@ -121,12 +128,9 @@ namespace GUI
         private void btn_themlop_Click(object sender, EventArgs e)
         {
             ThemLop tl = new ThemLop();
-            tl.Show();
-        }
-
-        private void btn_thoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            this.Hide();
+            tl.ShowDialog();
+            this.Show();
         }
     }
 }

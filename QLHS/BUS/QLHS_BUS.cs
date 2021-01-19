@@ -71,6 +71,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable LayLopHoc(string malophoc)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayLopHoc(malophoc);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
 
         public DataTable DSLop()
         {
@@ -96,12 +108,36 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable LayKhoiLop()
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.LayKhoiLop();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public int ThemHocSinh(QLHS_DTO hs)
         {
             try
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
                 return dal.ThemHocSinh(hs);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public int ThemDSLop(string malop, string mahs)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.ThemDSLop(malop, mahs);
             }
             catch (SqlException ex)
             {
@@ -129,7 +165,7 @@ namespace BUS
             }
             catch (SqlException ex)
             {
-                throw ex;
+                return 0;
             }
         }
         public int ThemHocKi(QLHS_DTO hs)

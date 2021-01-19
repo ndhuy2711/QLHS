@@ -38,8 +38,10 @@ END
 exec dbo.ThemHSVaoLop '10A1'
 SELECT * FROM HOCSINH
 SELECT * FROM CHITIETDSLOP
-SELECT * FROM DANHSACHLOP
+SELECT * FROM DANHSACHLOP;
 SELECT * FROM KHOILOP
+
+SELECT MaLop FROM DANHSACHLOP where MaKhoiLop = ''
 
 ---------------------------
 SELECT * FROM BANGDIEM
@@ -49,3 +51,19 @@ select * from hocki
 select * from BAOCAOTONGKETHK
 select * from BAOCAOTONGKETMON
 select * from THAMSO
+select * from HOCSINH
+-- Store Proc Update Danh
+CREATE 
+--ALTER
+PROC USP_CHITIETDSLOP
+@Malop nvarchar(10),
+@MaHS nvarchar(10)
+AS
+BEGIN
+	UPDATE CHITIETDSLOP
+	SET MaLop = @Malop
+	WHERE MaHocSinh = @MaHS
+END
+
+EXEC USP_CHITIETDSLOP N'L1' , N'HS1'
+select * from CHITIETDSLOP

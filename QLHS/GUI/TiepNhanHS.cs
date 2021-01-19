@@ -42,15 +42,8 @@ namespace GUI
 
             }
         }
-        private void dt_ngaysinh_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_xeplophocsinh_Click(object sender, EventArgs e)
         {
-            Lop l = new Lop();
-            l.Show();
         }
 
         private void frmTiepNhanHS_Load(object sender, EventArgs e)
@@ -82,6 +75,9 @@ namespace GUI
                         MessageBox.Show("Thêm thành công học sinh " + txt_hovaten.Text + " !", "Thông báo");
                         LoadData();
                         bus.ThemCTDSLOP(hs);
+                        btn_hoanthanh.Visible = false;
+                        btn_ThemHS.Visible = true;
+                        dtgv_danhsachhocsinh.Enabled = true;
                     }    
                     else
                     {
@@ -95,7 +91,7 @@ namespace GUI
             }
             catch (Exception ex)
                 {
-
+                MessageBox.Show("Đã tồn tại Mã HS trong Data!");
                 }
             
            
@@ -151,6 +147,25 @@ namespace GUI
 
         private void btn_capnhathocsinh_Click(object sender, EventArgs e)
         {
+            btn_Luu_HS.Visible = true;
+            btn_capnhathocsinh.Visible = false;
+            int index = dtgv_danhsachhocsinh.CurrentRow.Index;
+            txt_mahocsinh.Enabled = false;
+            txt_hovaten.Text = dtgv_danhsachhocsinh.Rows[index].Cells[1].Value.ToString();
+            cb_gioitinh.Text = dtgv_danhsachhocsinh.Rows[index].Cells[2].Value.ToString();
+            dt_ngaysinh.Text = dtgv_danhsachhocsinh.Rows[index].Cells[3].Value.ToString();
+            txt_diachi.Text = dtgv_danhsachhocsinh.Rows[index].Cells[4].Value.ToString();
+            txt_email.Text = dtgv_danhsachhocsinh.Rows[index].Cells[5].Value.ToString();
+           
+        }
+
+        private void btn_themkhoilop_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_Luu_HS_Click(object sender, EventArgs e)
+        {
             try
             {
                 if ((txt_hovaten.Text != "") && (dt_ngaysinh.Value.ToString() != "") && (cb_gioitinh.Text != "") && (txt_diachi.Text != "") && (txt_email.Text != ""))
@@ -165,22 +180,37 @@ namespace GUI
                     QLHS_BUS bus = new QLHS_BUS();
                     bus.CapNhatHocSinh(hs);
                     MessageBox.Show("Cập nhật thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
+                    btn_capnhathocsinh.Visible = true;
+                    btn_Luu_HS.Visible = false;
+                    txt_mahocsinh.Enabled = true;
                     LoadData();
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Cập nhật không thành công! Mời bạn xem lại dữ liệu nhập! ", "Thông báo");
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void btn_themkhoilop_Click(object sender, EventArgs e)
+        void ClearText()
         {
-            KhoiLop kl = new KhoiLop();
-            kl.Show();
+            txt_email.Text = "";
+            txt_diachi.Text = "";
+            txt_hovaten.Text = "";
+            txt_mahocsinh.Text = "";
+            dt_ngaysinh.Value = DateTime.Now;
+        }
+
+        private void btn_ThemHS_Click(object sender, EventArgs e)
+        {
+            btn_ThemHS.Visible = false;
+            ClearText();
+            btn_hoanthanh.Visible = true;
+            dtgv_danhsachhocsinh.Enabled = false;
         }
     }
 }

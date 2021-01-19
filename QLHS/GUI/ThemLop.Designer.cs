@@ -32,20 +32,22 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemLop));
             this.dtgv_themlop = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_malop = new System.Windows.Forms.TextBox();
-            this.txt_tenlop = new System.Windows.Forms.TextBox();
-            this.txt_makhoilop = new System.Windows.Forms.TextBox();
-            this.txt_siso = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_them = new System.Windows.Forms.Button();
-            this.btn_capnhatlop = new System.Windows.Forms.Button();
             this.btn_xoalop = new System.Windows.Forms.Button();
+            this.btn_capnhatlop = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_siso = new System.Windows.Forms.TextBox();
+            this.txt_tenlop = new System.Windows.Forms.TextBox();
+            this.txt_malop = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_xeplop = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_XacNhan = new System.Windows.Forms.Button();
+            this.btn_Luu_Lai = new System.Windows.Forms.Button();
+            this.cb_Khoi_LopHoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_themlop)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,14 +64,16 @@ namespace GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_Khoi_LopHoc);
             this.groupBox1.Controls.Add(this.btn_xoalop);
+            this.groupBox1.Controls.Add(this.btn_Luu_Lai);
             this.groupBox1.Controls.Add(this.btn_capnhatlop);
+            this.groupBox1.Controls.Add(this.btn_XacNhan);
             this.groupBox1.Controls.Add(this.btn_them);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_siso);
-            this.groupBox1.Controls.Add(this.txt_makhoilop);
             this.groupBox1.Controls.Add(this.txt_tenlop);
             this.groupBox1.Controls.Add(this.txt_malop);
             this.groupBox1.Controls.Add(this.label1);
@@ -81,80 +85,15 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm lớp";
             // 
-            // label1
+            // btn_xoalop
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Lớp";
-            // 
-            // txt_malop
-            // 
-            this.txt_malop.Location = new System.Drawing.Point(82, 35);
-            this.txt_malop.Name = "txt_malop";
-            this.txt_malop.Size = new System.Drawing.Size(100, 25);
-            this.txt_malop.TabIndex = 1;
-            // 
-            // txt_tenlop
-            // 
-            this.txt_tenlop.Location = new System.Drawing.Point(82, 64);
-            this.txt_tenlop.Name = "txt_tenlop";
-            this.txt_tenlop.Size = new System.Drawing.Size(100, 25);
-            this.txt_tenlop.TabIndex = 2;
-            // 
-            // txt_makhoilop
-            // 
-            this.txt_makhoilop.Location = new System.Drawing.Point(386, 66);
-            this.txt_makhoilop.Name = "txt_makhoilop";
-            this.txt_makhoilop.Size = new System.Drawing.Size(100, 25);
-            this.txt_makhoilop.TabIndex = 3;
-            // 
-            // txt_siso
-            // 
-            this.txt_siso.Location = new System.Drawing.Point(386, 35);
-            this.txt_siso.Name = "txt_siso";
-            this.txt_siso.Size = new System.Drawing.Size(57, 25);
-            this.txt_siso.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tên Lớp";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(284, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Sĩ số";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(284, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mã Khối Lớp";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btn_them
-            // 
-            this.btn_them.Location = new System.Drawing.Point(98, 114);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(92, 35);
-            this.btn_them.TabIndex = 7;
-            this.btn_them.Text = "Thêm lớp";
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
+            this.btn_xoalop.Location = new System.Drawing.Point(329, 114);
+            this.btn_xoalop.Name = "btn_xoalop";
+            this.btn_xoalop.Size = new System.Drawing.Size(91, 35);
+            this.btn_xoalop.TabIndex = 9;
+            this.btn_xoalop.Text = "Xoá lớp";
+            this.btn_xoalop.UseVisualStyleBackColor = true;
+            this.btn_xoalop.Click += new System.EventHandler(this.btn_xoalop_Click);
             // 
             // btn_capnhatlop
             // 
@@ -166,15 +105,73 @@ namespace GUI
             this.btn_capnhatlop.UseVisualStyleBackColor = true;
             this.btn_capnhatlop.Click += new System.EventHandler(this.btn_capnhatlop_Click);
             // 
-            // btn_xoalop
+            // btn_them
             // 
-            this.btn_xoalop.Location = new System.Drawing.Point(345, 114);
-            this.btn_xoalop.Name = "btn_xoalop";
-            this.btn_xoalop.Size = new System.Drawing.Size(91, 35);
-            this.btn_xoalop.TabIndex = 9;
-            this.btn_xoalop.Text = "Xoá lớp";
-            this.btn_xoalop.UseVisualStyleBackColor = true;
-            this.btn_xoalop.Click += new System.EventHandler(this.btn_xoalop_Click);
+            this.btn_them.Location = new System.Drawing.Point(110, 114);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(92, 35);
+            this.btn_them.TabIndex = 7;
+            this.btn_them.Text = "Thêm lớp";
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(288, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Khối Lớp";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(288, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Sĩ số";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tên Lớp";
+            // 
+            // txt_siso
+            // 
+            this.txt_siso.Location = new System.Drawing.Point(390, 64);
+            this.txt_siso.Name = "txt_siso";
+            this.txt_siso.Size = new System.Drawing.Size(57, 25);
+            this.txt_siso.TabIndex = 3;
+            // 
+            // txt_tenlop
+            // 
+            this.txt_tenlop.Location = new System.Drawing.Point(82, 64);
+            this.txt_tenlop.Name = "txt_tenlop";
+            this.txt_tenlop.Size = new System.Drawing.Size(100, 25);
+            this.txt_tenlop.TabIndex = 2;
+            // 
+            // txt_malop
+            // 
+            this.txt_malop.Location = new System.Drawing.Point(82, 35);
+            this.txt_malop.Name = "txt_malop";
+            this.txt_malop.Size = new System.Drawing.Size(100, 25);
+            this.txt_malop.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã Lớp";
             // 
             // btn_xeplop
             // 
@@ -211,6 +208,36 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách lớp học";
             // 
+            // btn_XacNhan
+            // 
+            this.btn_XacNhan.Location = new System.Drawing.Point(110, 114);
+            this.btn_XacNhan.Name = "btn_XacNhan";
+            this.btn_XacNhan.Size = new System.Drawing.Size(92, 35);
+            this.btn_XacNhan.TabIndex = 7;
+            this.btn_XacNhan.Text = "Xác Nhận";
+            this.btn_XacNhan.UseVisualStyleBackColor = true;
+            this.btn_XacNhan.Visible = false;
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
+            // 
+            // btn_Luu_Lai
+            // 
+            this.btn_Luu_Lai.Location = new System.Drawing.Point(208, 114);
+            this.btn_Luu_Lai.Name = "btn_Luu_Lai";
+            this.btn_Luu_Lai.Size = new System.Drawing.Size(115, 35);
+            this.btn_Luu_Lai.TabIndex = 8;
+            this.btn_Luu_Lai.Text = "Lưu Cập Nhật";
+            this.btn_Luu_Lai.UseVisualStyleBackColor = true;
+            this.btn_Luu_Lai.Visible = false;
+            this.btn_Luu_Lai.Click += new System.EventHandler(this.btn_Luu_Lai_Click);
+            // 
+            // cb_Khoi_LopHoc
+            // 
+            this.cb_Khoi_LopHoc.FormattingEnabled = true;
+            this.cb_Khoi_LopHoc.Location = new System.Drawing.Point(390, 35);
+            this.cb_Khoi_LopHoc.Name = "cb_Khoi_LopHoc";
+            this.cb_Khoi_LopHoc.Size = new System.Drawing.Size(103, 25);
+            this.cb_Khoi_LopHoc.TabIndex = 10;
+            // 
             // ThemLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,7 +268,6 @@ namespace GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_siso;
-        private System.Windows.Forms.TextBox txt_makhoilop;
         private System.Windows.Forms.TextBox txt_tenlop;
         private System.Windows.Forms.TextBox txt_malop;
         private System.Windows.Forms.Label label1;
@@ -251,5 +277,8 @@ namespace GUI
         private System.Windows.Forms.Button btn_xeplop;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_XacNhan;
+        private System.Windows.Forms.Button btn_Luu_Lai;
+        private System.Windows.Forms.ComboBox cb_Khoi_LopHoc;
     }
 }

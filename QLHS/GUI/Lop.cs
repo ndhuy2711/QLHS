@@ -24,7 +24,11 @@ namespace GUI
             {
                 QLHS_BUS bus = new QLHS_BUS();
                 DataTable dt = bus.DSLop();
+                DataTable dt_1 = bus.LayKhoiLop();
                 dtgv_danhsachlop.DataSource = dt;
+                cb_khoi.DataSource = dt_1;
+                cb_khoi.DisplayMember = "MaKhoiLop";
+                cb_khoi.ValueMember = "MaKhoiLop";
                 if (dt.Rows.Count > 0)
                 {
                     dtgv_danhsachlop.Rows[0].Selected = true;
@@ -51,57 +55,7 @@ namespace GUI
             
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void cb_lop_MouseClick(object sender, MouseEventArgs e)
-        {
-            
-            
-            
-        }
-
-        private void cb_lop_DropDown(object sender, EventArgs e)
-        {
-            if (cb_khoi.Text == "Khối 10")
-            {
-                cb_lop.Items.Clear();
-                cb_lop.Items.Add("10A1");
-                cb_lop.Items.Add("10A2");
-                cb_lop.Items.Add("10A3");
-                cb_lop.Items.Add("10A4");
-            }
-            if (cb_khoi.Text == "Khối 11")
-            {
-                cb_lop.Items.Clear();
-                cb_lop.Items.Add("11A1");
-                cb_lop.Items.Add("11A2");
-                cb_lop.Items.Add("11A3");
-            }
-            if (cb_khoi.Text == "Khối 12")
-            {
-                cb_lop.Items.Clear();
-                cb_lop.Items.Add("12A1");
-                cb_lop.Items.Add("12A2");
-            }
-        }
-
-        private void dtgv_danhsachlop_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void Lop_Load(object sender, EventArgs e)
         {
@@ -113,7 +67,7 @@ namespace GUI
             LoadData();
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void txt_mahocsinh_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -132,11 +86,6 @@ namespace GUI
             }
         }
 
-        private void txt_mahocsinh_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txt_namsinh_TextChanged(object sender, EventArgs e)
         {
 
@@ -144,18 +93,36 @@ namespace GUI
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            QLHS_DTO hs = new QLHS_DTO();
-            hs.MaHocSinh = txt_mahocsinh.Text;
-            hs.HoTen = txt_tenhocsinh.Text;
-            hs.TenKhoiLop = cb_khoi.Text;
-            hs.TenLop = cb_lop.Text;
+            try
+            {
+                QLHS_DTO hs = new QLHS_DTO();
+               
+                hs.MaHocSinh = txt_mahocsinh.Text;
+                hs.HoTen = txt_tenhocsinh.Text;
+                hs.TenKhoiLop = cb_khoi.Text;
+                hs.TenLop = cb_lop.Text;
 
-            
+
+                QLHS_BUS bus = new QLHS_BUS();
+
+                bus.ThemDSLop(cb_lop.Text, txt_mahocsinh.Text);
+                MessageBox.Show("Thêm thành công học sinh vào lớp " + cb_lop.Text + " !", "Thông báo");
+                LoadData();
+            }
+            catch
+            {
+                MessageBox.Show("Error: Lỗi Database !");
+            }
+          
+        }
+
+        private void cb_khoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
             QLHS_BUS bus = new QLHS_BUS();
-            
-            bus.ThemHSVaoLop(hs.TenLop);
-            MessageBox.Show("Thêm thành công học sinh vào lớp " + cb_lop.Text + " !", "Thông báo");
-            LoadData();
+            DataTable dt = bus.LayLopHoc(cb_khoi.Text);
+            cb_lop.DataSource = dt;
+            cb_lop.DisplayMember = "MaLop";
+            cb_lop.ValueMember = "MaLop";
         }
     }
 }
