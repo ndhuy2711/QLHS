@@ -29,6 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuHS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_timkiemtheoten = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@ namespace GUI
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_tenlop = new System.Windows.Forms.TextBox();
+            this.txt_NgaySinh = new System.Windows.Forms.TextBox();
             this.txt_gioitinh = new System.Windows.Forms.TextBox();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.txt_mahocsinh = new System.Windows.Forms.TextBox();
@@ -47,7 +49,6 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_Timkiem = new System.Windows.Forms.DataGridView();
-            this.txt_NgaySinh = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Timkiem)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +130,14 @@ namespace GUI
             this.txt_tenlop.Name = "txt_tenlop";
             this.txt_tenlop.Size = new System.Drawing.Size(113, 22);
             this.txt_tenlop.TabIndex = 11;
+            // 
+            // txt_NgaySinh
+            // 
+            this.txt_NgaySinh.Enabled = false;
+            this.txt_NgaySinh.Location = new System.Drawing.Point(88, 115);
+            this.txt_NgaySinh.Name = "txt_NgaySinh";
+            this.txt_NgaySinh.Size = new System.Drawing.Size(168, 22);
+            this.txt_NgaySinh.TabIndex = 9;
             // 
             // txt_gioitinh
             // 
@@ -227,14 +236,6 @@ namespace GUI
             this.dtgv_Timkiem.TabIndex = 1;
             this.dtgv_Timkiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txt_NgaySinh
-            // 
-            this.txt_NgaySinh.Enabled = false;
-            this.txt_NgaySinh.Location = new System.Drawing.Point(88, 115);
-            this.txt_NgaySinh.Name = "txt_NgaySinh";
-            this.txt_NgaySinh.Size = new System.Drawing.Size(168, 22);
-            this.txt_NgaySinh.TabIndex = 9;
-            // 
             // TraCuuHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,10 +244,11 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(613, 406);
             this.Controls.Add(this.dtgv_Timkiem);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TraCuuHS";
-            this.Text = "TraCuuHS";
+            this.Text = "Tra Cứu Học Sinh";
             this.Load += new System.EventHandler(this.TraCuuHS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

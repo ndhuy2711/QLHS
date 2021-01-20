@@ -230,22 +230,22 @@ namespace GUI
             // danhSáchLớpToolStripMenuItem
             // 
             this.danhSáchLớpToolStripMenuItem.Name = "danhSáchLớpToolStripMenuItem";
-            this.danhSáchLớpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.danhSáchLớpToolStripMenuItem.Text = "Danh Sách Lớp";
+            this.danhSáchLớpToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.danhSáchLớpToolStripMenuItem.Text = "Thêm Khối Lớp";
             this.danhSáchLớpToolStripMenuItem.Click += new System.EventHandler(this.danhSáchLớpToolStripMenuItem_Click);
             // 
             // thêmKhốiLớpToolStripMenuItem
             // 
             this.thêmKhốiLớpToolStripMenuItem.Name = "thêmKhốiLớpToolStripMenuItem";
-            this.thêmKhốiLớpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.thêmKhốiLớpToolStripMenuItem.Text = "Thêm Khối Lớp";
+            this.thêmKhốiLớpToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.thêmKhốiLớpToolStripMenuItem.Text = "Thêm Lớp Học";
             this.thêmKhốiLớpToolStripMenuItem.Click += new System.EventHandler(this.thêmKhốiLớpToolStripMenuItem_Click);
             // 
             // thêmLớpToolStripMenuItem
             // 
             this.thêmLớpToolStripMenuItem.Name = "thêmLớpToolStripMenuItem";
-            this.thêmLớpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.thêmLớpToolStripMenuItem.Text = "Thêm Lớp";
+            this.thêmLớpToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.thêmLớpToolStripMenuItem.Text = "Xếp Lớp Cho Học Sinh";
             this.thêmLớpToolStripMenuItem.Click += new System.EventHandler(this.thêmLớpToolStripMenuItem_Click);
             // 
             // điểmToolStripMenuItem
@@ -262,22 +262,22 @@ namespace GUI
             // nhậpBảngĐiểmMônHọcToolStripMenuItem
             // 
             this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Name = "nhậpBảngĐiểmMônHọcToolStripMenuItem";
-            this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Text = "Nhập Bảng Điểm Môn Học";
+            this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Text = "Thêm Học Kỳ";
             this.nhậpBảngĐiểmMônHọcToolStripMenuItem.Click += new System.EventHandler(this.nhậpBảngĐiểmMônHọcToolStripMenuItem_Click);
             // 
             // mônHọcToolStripMenuItem
             // 
             this.mônHọcToolStripMenuItem.Name = "mônHọcToolStripMenuItem";
-            this.mônHọcToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.mônHọcToolStripMenuItem.Text = "Môn học";
+            this.mônHọcToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mônHọcToolStripMenuItem.Text = "Thêm Môn Học";
             this.mônHọcToolStripMenuItem.Click += new System.EventHandler(this.mônHọcToolStripMenuItem_Click);
             // 
             // họcKìToolStripMenuItem
             // 
             this.họcKìToolStripMenuItem.Name = "họcKìToolStripMenuItem";
             this.họcKìToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.họcKìToolStripMenuItem.Text = "Học Kì";
+            this.họcKìToolStripMenuItem.Text = "Nhập Bảng Điểm Môn Học";
             this.họcKìToolStripMenuItem.Click += new System.EventHandler(this.họcKìToolStripMenuItem_Click);
             // 
             // báoCáoToolStripMenuItem
@@ -332,6 +332,7 @@ namespace GUI
             this.MinimizeBox = false;
             this.Name = "frmTrangChu";
             this.Text = "Trường THPT Trần Bình Trọng";
+            this.Load += new System.EventHandler(this.frmTrangChu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -328,7 +328,7 @@ namespace BUS
                 throw ex;
             }
         }
-        public int XoaKhoiLop(QLHS_DTO ma)
+        public int XoaKhoiLop(string ma)
         {
             try
             {

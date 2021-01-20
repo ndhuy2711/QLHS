@@ -153,7 +153,7 @@ namespace DAL
             DBConnect provider = new DBConnect();
             try
             {
-                string strSql = "SELECT MaLop FROM DANHSACHLOP where MaKhoiLop = '"+ makhoilop + "'";
+                string strSql = "SELECT TenLop FROM DANHSACHLOP where MaKhoiLop = '"+ makhoilop + "'";
                 provider.Connect(); ;
                 DataTable dt = provider.Select(CommandType.Text, strSql);
                 return dt;
@@ -598,7 +598,7 @@ namespace DAL
             return nRow;
         }
 
-        public int XoaKhoiLop(QLHS_DTO ma)
+        public int XoaKhoiLop(string ma)
         {
             int nRow = 0;
             DBConnect provider = new DBConnect();
@@ -607,7 +607,7 @@ namespace DAL
                 string strSql = "DELETE FROM KHOILOP WHERE MaKhoiLop = @MaKhoiLop;";
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
-                            new SqlParameter { ParameterName = "@MaKhoiLop", Value = ma.MaKhoiLop }
+                            new SqlParameter { ParameterName = "@MaKhoiLop", Value = ma }
                     );
 
             }

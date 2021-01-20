@@ -180,7 +180,7 @@ namespace GUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HOCKI";
-            this.Text = "HOCKI";
+            this.Text = "Học Kỳ";
             this.Load += new System.EventHandler(this.HOCKI_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachhocki)).EndInit();

@@ -50,6 +50,24 @@ namespace GUI
         private void frmTiepNhanHS_Load(object sender, EventArgs e)
         {
             LoadData();
+            txt_mahocsinh.Enabled = false;
+            txt_hovaten.Enabled = false;
+            txt_email.Enabled = false;
+            txt_diachi.Enabled = false;
+            cb_gioitinh.Enabled = false;
+            dt_ngaysinh.Enabled = false;
+            txt_hovaten.DataBindings.Clear();
+            txt_hovaten.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "HoTen");
+            txt_mahocsinh.DataBindings.Clear();
+            txt_mahocsinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "MaHocSinh");
+            txt_email.DataBindings.Clear();
+            txt_email.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "Email");
+            txt_diachi.DataBindings.Clear();
+            txt_diachi.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "DiaChi");
+            cb_gioitinh.DataBindings.Clear();
+            cb_gioitinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "GioiTinh");
+            dt_ngaysinh.DataBindings.Clear();
+            dt_ngaysinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "NgaySinh");
         }
 
         private void btn_hoanthanh_Click(object sender, EventArgs e)
@@ -80,7 +98,25 @@ namespace GUI
                         bus.ThemCTDSLOP(hs);
                         btn_hoanthanh.Visible = false;
                         btn_ThemHS.Visible = true;
-                        dtgv_danhsachhocsinh.Enabled = true;
+                        btn_capnhathocsinh.Visible = true;
+                        txt_mahocsinh.Enabled = false;
+                        txt_hovaten.Enabled = false;
+                        txt_email.Enabled = false;
+                        txt_diachi.Enabled = false;
+                        cb_gioitinh.Enabled = false;
+                        dt_ngaysinh.Enabled = false;
+                        txt_hovaten.DataBindings.Clear();
+                        txt_hovaten.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "HoTen");
+                        txt_mahocsinh.DataBindings.Clear();
+                        txt_mahocsinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "MaHocSinh");
+                        txt_email.DataBindings.Clear();
+                        txt_email.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "Email");
+                        txt_diachi.DataBindings.Clear();
+                        txt_diachi.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "DiaChi");
+                        cb_gioitinh.DataBindings.Clear();
+                        cb_gioitinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "GioiTinh");
+                        dt_ngaysinh.DataBindings.Clear();
+                        dt_ngaysinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "NgaySinh");
                     }    
                     else
                     {
@@ -110,36 +146,51 @@ namespace GUI
         {
             try
             {
-                DialogResult DR =  MessageBox.Show("Bạn có chắc chắn xoá học sinh này!", "Thông báo", MessageBoxButtons.YesNo);
-                if(DialogResult.Yes == DR)
+                DialogResult DR = MessageBox.Show("Bạn có chắc chắn xoá học sinh này!", "Thông báo", MessageBoxButtons.YesNo);
+                if (DialogResult.Yes == DR)
                 {
                     QLHS_DTO hs = new QLHS_DTO();
                     QLHS_BUS bus = new QLHS_BUS();
                     bus.XoaHocSinh(txt_mahocsinh.Text);
                     MessageBox.Show("Xoá thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
                     LoadData();
+                    ClearText();
+                    txt_hovaten.DataBindings.Clear();
+                    txt_hovaten.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "HoTen");
+                    txt_mahocsinh.DataBindings.Clear();
+                    txt_mahocsinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "MaHocSinh");
+                    txt_email.DataBindings.Clear();
+                    txt_email.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "Email");
+                    txt_diachi.DataBindings.Clear();
+                    txt_diachi.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "DiaChi");
+                    cb_gioitinh.DataBindings.Clear();
+                    cb_gioitinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "GioiTinh");
+                    dt_ngaysinh.DataBindings.Clear();
+                    dt_ngaysinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "NgaySinh");
                 }
-                else {
+                else
+                {
                     LoadData();
                 }
-            }    
-                
+            }
+
             catch (Exception ex)
             {
 
             }
+
         }
 
         private void dtgv_danhsachhocsinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dtgv_danhsachhocsinh.CurrentRow.Index;
-            txt_mahocsinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[0].Value.ToString();
-            txt_hovaten.Text = dtgv_danhsachhocsinh.Rows[i].Cells[1].Value.ToString();
-            cb_gioitinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[2].Value.ToString();
-            dt_ngaysinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[3].Value.ToString();
-            txt_diachi.Text = dtgv_danhsachhocsinh.Rows[i].Cells[4].Value.ToString();
-            txt_email.Text = dtgv_danhsachhocsinh.Rows[i].Cells[5].Value.ToString();
+            //int i;
+            //i = dtgv_danhsachhocsinh.CurrentRow.Index;
+            //txt_mahocsinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[0].Value.ToString();
+            //txt_hovaten.Text = dtgv_danhsachhocsinh.Rows[i].Cells[1].Value.ToString();
+            //cb_gioitinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[2].Value.ToString();
+            //dt_ngaysinh.Text = dtgv_danhsachhocsinh.Rows[i].Cells[3].Value.ToString();
+            //txt_diachi.Text = dtgv_danhsachhocsinh.Rows[i].Cells[4].Value.ToString();
+            //txt_email.Text = dtgv_danhsachhocsinh.Rows[i].Cells[5].Value.ToString();
         }
 
         private void dtgv_danhsachhocsinh_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,8 +200,15 @@ namespace GUI
 
         private void btn_capnhathocsinh_Click(object sender, EventArgs e)
         {
+            txt_mahocsinh.Enabled = true;
+            txt_hovaten.Enabled = true;
+            txt_email.Enabled = true;
+            txt_diachi.Enabled = true;
+            cb_gioitinh.Enabled = true;
+            dt_ngaysinh.Enabled = true;
+
+            btn_ThemHS.Visible = false;
             btn_Luu_HS.Visible = true;
-            btn_capnhathocsinh.Visible = false;
             int index = dtgv_danhsachhocsinh.CurrentRow.Index;
             txt_mahocsinh.Enabled = false;
             txt_hovaten.Text = dtgv_danhsachhocsinh.Rows[index].Cells[1].Value.ToString();
@@ -183,9 +241,28 @@ namespace GUI
                     bus.CapNhatHocSinh(hs);
                     MessageBox.Show("Cập nhật thành công học sinh " + txt_mahocsinh.Text + " !", "Thông báo");
                     btn_capnhathocsinh.Visible = true;
+                    btn_ThemHS.Visible = true;
                     btn_Luu_HS.Visible = false;
                     txt_mahocsinh.Enabled = true;
+                    txt_mahocsinh.Enabled = false;
+                    txt_hovaten.Enabled = false;
+                    txt_email.Enabled = false;
+                    txt_diachi.Enabled = false;
+                    cb_gioitinh.Enabled = false;
+                    dt_ngaysinh.Enabled = false;
                     LoadData();
+                    txt_hovaten.DataBindings.Clear();
+                    txt_hovaten.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "HoTen");
+                    txt_mahocsinh.DataBindings.Clear();
+                    txt_mahocsinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "MaHocSinh");
+                    txt_email.DataBindings.Clear();
+                    txt_email.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "Email");
+                    txt_diachi.DataBindings.Clear();
+                    txt_diachi.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "DiaChi");
+                    cb_gioitinh.DataBindings.Clear();
+                    cb_gioitinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "GioiTinh");
+                    dt_ngaysinh.DataBindings.Clear();
+                    dt_ngaysinh.DataBindings.Add("Text", dtgv_danhsachhocsinh.DataSource, "NgaySinh");
                 }
                 else
                 {
@@ -209,10 +286,19 @@ namespace GUI
 
         private void btn_ThemHS_Click(object sender, EventArgs e)
         {
+            txt_mahocsinh.Enabled = true;
+            txt_hovaten.Enabled = true;
+            txt_email.Enabled = true;
+            txt_diachi.Enabled = true;
+            cb_gioitinh.Enabled = true;
+            dt_ngaysinh.Enabled = true;
+
+            btn_capnhathocsinh.Visible = false;
             btn_ThemHS.Visible = false;
             ClearText();
             btn_hoanthanh.Visible = true;
-            dtgv_danhsachhocsinh.Enabled = false;
         }
+
+      
     }
 }

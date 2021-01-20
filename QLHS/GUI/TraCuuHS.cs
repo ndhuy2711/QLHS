@@ -101,7 +101,7 @@ namespace GUI
                 txt_diachi.DataBindings.Clear();
                 txt_diachi.DataBindings.Add("Text", dtgv_Timkiem.DataSource, "DiaChi");
             }
-        }    
-            
+        }
+
     }
 }

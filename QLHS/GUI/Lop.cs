@@ -121,11 +121,21 @@ namespace GUI
             QLHS_BUS bus = new QLHS_BUS();
             DataTable dt = bus.LayLopHoc(cb_khoi.Text);
             cb_lop.DataSource = dt;
-            cb_lop.DisplayMember = "MaLop";
-            cb_lop.ValueMember = "MaLop";
+            cb_lop.DisplayMember = "TenLop";
+            cb_lop.ValueMember = "TenLop";
         }
 
         private void dtgv_danhsachlop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_lop_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

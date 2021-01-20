@@ -29,6 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHoc));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_nhapdiemmonhoc = new System.Windows.Forms.Button();
             this.btn_XacNhan = new System.Windows.Forms.Button();
@@ -178,10 +179,11 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(754, 387);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MonHoc";
-            this.Text = "MonHoc";
+            this.Text = "Lập Danh Sách Môn Học";
             this.Load += new System.EventHandler(this.MonHoc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

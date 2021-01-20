@@ -29,24 +29,25 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapBangDiemMonHoc));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_mamonhoc = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.txt_diemck = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_diem1tiet = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_tenmh = new System.Windows.Forms.ComboBox();
             this.txt_tenhs = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_mahocsinh = new System.Windows.Forms.TextBox();
             this.txt_diem15phut = new System.Windows.Forms.TextBox();
-            this.txt_diem1tiet = new System.Windows.Forms.TextBox();
-            this.txt_diemck = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cb_tenmh = new System.Windows.Forms.ComboBox();
-            this.btn_luu = new System.Windows.Forms.Button();
             this.dtgv_danhsachbangdiem = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lb_mamonhoc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachbangdiem)).BeginInit();
@@ -77,6 +78,75 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập bảng điểm môn học";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lb_mamonhoc
+            // 
+            this.lb_mamonhoc.AutoSize = true;
+            this.lb_mamonhoc.Location = new System.Drawing.Point(121, 141);
+            this.lb_mamonhoc.Name = "lb_mamonhoc";
+            this.lb_mamonhoc.Size = new System.Drawing.Size(50, 17);
+            this.lb_mamonhoc.TabIndex = 25;
+            this.lb_mamonhoc.Text = "NULL";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 17);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Mã môn học";
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.Location = new System.Drawing.Point(379, 141);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(111, 31);
+            this.btn_luu.TabIndex = 23;
+            this.btn_luu.Text = "Lưu tất cả";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
+            // txt_diemck
+            // 
+            this.txt_diemck.Location = new System.Drawing.Point(390, 99);
+            this.txt_diemck.Name = "txt_diemck";
+            this.txt_diemck.Size = new System.Drawing.Size(100, 25);
+            this.txt_diemck.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(284, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Điểm 1 tiết";
+            // 
+            // txt_diem1tiet
+            // 
+            this.txt_diem1tiet.Location = new System.Drawing.Point(390, 68);
+            this.txt_diem1tiet.Name = "txt_diem1tiet";
+            this.txt_diem1tiet.Size = new System.Drawing.Size(100, 25);
+            this.txt_diem1tiet.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(284, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Điểm 15 phút";
+            // 
+            // cb_tenmh
+            // 
+            this.cb_tenmh.FormattingEnabled = true;
+            this.cb_tenmh.Location = new System.Drawing.Point(119, 99);
+            this.cb_tenmh.Name = "cb_tenmh";
+            this.cb_tenmh.Size = new System.Drawing.Size(103, 25);
+            this.cb_tenmh.TabIndex = 22;
+            this.cb_tenmh.SelectedIndexChanged += new System.EventHandler(this.cb_tenmh_SelectedIndexChanged);
             // 
             // txt_tenhs
             // 
@@ -110,20 +180,6 @@ namespace GUI
             this.txt_diem15phut.Size = new System.Drawing.Size(100, 25);
             this.txt_diem15phut.TabIndex = 11;
             // 
-            // txt_diem1tiet
-            // 
-            this.txt_diem1tiet.Location = new System.Drawing.Point(390, 68);
-            this.txt_diem1tiet.Name = "txt_diem1tiet";
-            this.txt_diem1tiet.Size = new System.Drawing.Size(100, 25);
-            this.txt_diem1tiet.TabIndex = 10;
-            // 
-            // txt_diemck
-            // 
-            this.txt_diemck.Location = new System.Drawing.Point(390, 99);
-            this.txt_diemck.Name = "txt_diemck";
-            this.txt_diemck.Size = new System.Drawing.Size(100, 25);
-            this.txt_diemck.TabIndex = 9;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -132,24 +188,6 @@ namespace GUI
             this.label5.Size = new System.Drawing.Size(94, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Điểm cuối kỳ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(284, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Điểm 1 tiết";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(284, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Điểm 15 phút";
             // 
             // label2
             // 
@@ -180,25 +218,6 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách bảng điểm";
             // 
-            // cb_tenmh
-            // 
-            this.cb_tenmh.FormattingEnabled = true;
-            this.cb_tenmh.Location = new System.Drawing.Point(119, 99);
-            this.cb_tenmh.Name = "cb_tenmh";
-            this.cb_tenmh.Size = new System.Drawing.Size(103, 25);
-            this.cb_tenmh.TabIndex = 22;
-            this.cb_tenmh.SelectedIndexChanged += new System.EventHandler(this.cb_tenmh_SelectedIndexChanged);
-            // 
-            // btn_luu
-            // 
-            this.btn_luu.Location = new System.Drawing.Point(379, 141);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(111, 31);
-            this.btn_luu.TabIndex = 23;
-            this.btn_luu.Text = "Lưu tất cả";
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
-            // 
             // dtgv_danhsachbangdiem
             // 
             this.dtgv_danhsachbangdiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -209,24 +228,6 @@ namespace GUI
             this.dtgv_danhsachbangdiem.TabIndex = 0;
             this.dtgv_danhsachbangdiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachbangdiem_CellContentClick);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 141);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 17);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Mã môn học";
-            // 
-            // lb_mamonhoc
-            // 
-            this.lb_mamonhoc.AutoSize = true;
-            this.lb_mamonhoc.Location = new System.Drawing.Point(121, 141);
-            this.lb_mamonhoc.Name = "lb_mamonhoc";
-            this.lb_mamonhoc.Size = new System.Drawing.Size(50, 17);
-            this.lb_mamonhoc.TabIndex = 25;
-            this.lb_mamonhoc.Text = "NULL";
-            // 
             // NhapBangDiemMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,9 +235,10 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(526, 388);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NhapBangDiemMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NhapBangDiemMonHoc";
+            this.Text = "Nhập Bảng Điểm Cho Môn Học";
             this.Load += new System.EventHandler(this.NhapBangDiemMonHoc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -194,6 +194,7 @@ namespace GUI
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học sinh";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dt_ngaysinh
             // 
@@ -212,6 +213,7 @@ namespace GUI
             this.cb_lop.Name = "cb_lop";
             this.cb_lop.Size = new System.Drawing.Size(77, 27);
             this.cb_lop.TabIndex = 16;
+            this.cb_lop.SelectedIndexChanged += new System.EventHandler(this.cb_lop_SelectedIndexChanged);
             // 
             // label6
             // 

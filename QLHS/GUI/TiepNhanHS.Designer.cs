@@ -220,7 +220,6 @@ namespace GUI
             // 
             // dtgv_danhsachhocsinh
             // 
-            this.dtgv_danhsachhocsinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_danhsachhocsinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_danhsachhocsinh.Location = new System.Drawing.Point(6, 22);
             this.dtgv_danhsachhocsinh.Name = "dtgv_danhsachhocsinh";
@@ -232,7 +231,7 @@ namespace GUI
             // btn_xoahocsinh
             // 
             this.btn_xoahocsinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoahocsinh.Location = new System.Drawing.Point(606, 463);
+            this.btn_xoahocsinh.Location = new System.Drawing.Point(608, 420);
             this.btn_xoahocsinh.Name = "btn_xoahocsinh";
             this.btn_xoahocsinh.Size = new System.Drawing.Size(114, 35);
             this.btn_xoahocsinh.TabIndex = 11;
@@ -243,7 +242,7 @@ namespace GUI
             // btn_capnhathocsinh
             // 
             this.btn_capnhathocsinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_capnhathocsinh.Location = new System.Drawing.Point(606, 413);
+            this.btn_capnhathocsinh.Location = new System.Drawing.Point(608, 370);
             this.btn_capnhathocsinh.Name = "btn_capnhathocsinh";
             this.btn_capnhathocsinh.Size = new System.Drawing.Size(114, 35);
             this.btn_capnhathocsinh.TabIndex = 12;
@@ -254,7 +253,7 @@ namespace GUI
             // btn_tailai
             // 
             this.btn_tailai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tailai.Location = new System.Drawing.Point(605, 363);
+            this.btn_tailai.Location = new System.Drawing.Point(607, 474);
             this.btn_tailai.Name = "btn_tailai";
             this.btn_tailai.Size = new System.Drawing.Size(114, 35);
             this.btn_tailai.TabIndex = 13;
@@ -265,7 +264,7 @@ namespace GUI
             // btn_Luu_HS
             // 
             this.btn_Luu_HS.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu_HS.Location = new System.Drawing.Point(605, 412);
+            this.btn_Luu_HS.Location = new System.Drawing.Point(608, 370);
             this.btn_Luu_HS.Name = "btn_Luu_HS";
             this.btn_Luu_HS.Size = new System.Drawing.Size(114, 35);
             this.btn_Luu_HS.TabIndex = 12;

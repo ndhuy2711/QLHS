@@ -52,6 +52,18 @@ namespace GUI
         private void ThemLop_Load(object sender, EventArgs e)
         {
             LoadData();
+            txt_tenlop.DataBindings.Clear();
+            txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
+            txt_siso.DataBindings.Clear();
+            txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
+            txt_malop.DataBindings.Clear();
+            txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
+            cb_Khoi_LopHoc.DataBindings.Clear();
+            cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
+            txt_malop.Enabled = false;
+            txt_siso.Enabled = false;
+            txt_tenlop.Enabled = false;
+            cb_Khoi_LopHoc.Enabled = false;
         }
 
         private void dtgv_themlop_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,6 +84,13 @@ namespace GUI
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
+            btn_xeplop.Enabled = false;
+            btn_capnhatlop.Enabled = false;
+            btn_xoalop.Enabled = false;
+            txt_malop.Enabled = true;
+            txt_siso.Enabled = true;
+            txt_tenlop.Enabled = true;
+            cb_Khoi_LopHoc.Enabled = true;
             btn_them.Visible = false;
             ClearText();
             btn_XacNhan.Visible = true;
@@ -79,6 +98,13 @@ namespace GUI
 
         private void btn_capnhatlop_Click(object sender, EventArgs e)
         {
+            btn_xeplop.Enabled = false;
+            btn_them.Enabled = false;
+            btn_xoalop.Enabled = false;
+            txt_malop.Enabled = true;
+            txt_siso.Enabled = true;
+            txt_tenlop.Enabled = true;
+            cb_Khoi_LopHoc.Enabled = true;
             int index = dtgv_themlop.CurrentRow.Index;
             btn_capnhatlop.Visible = false;
             btn_Luu_Lai.Visible = true;
@@ -103,6 +129,14 @@ namespace GUI
                     bus.XoaLop(hs);
                     MessageBox.Show("Xoá thành công lớp " + txt_malop.Text + " !", "Thông báo");
                     LoadData();
+                    txt_tenlop.DataBindings.Clear();
+                    txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
+                    txt_siso.DataBindings.Clear();
+                    txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
+                    txt_malop.DataBindings.Clear();
+                    txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
+                    cb_Khoi_LopHoc.DataBindings.Clear();
+                    cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
                 }
                 else
                 {
@@ -142,6 +176,21 @@ namespace GUI
                 bus.ThemLop(hs);
                 MessageBox.Show("Thêm thành công lớp " + txt_malop.Text + " !", "Thông báo");
                 LoadData();
+                btn_capnhatlop.Enabled = true;
+                btn_xoalop.Enabled = true;
+                btn_xeplop.Enabled = true;
+                txt_malop.Enabled = false;
+                txt_siso.Enabled = false;
+                txt_tenlop.Enabled = false;
+                cb_Khoi_LopHoc.Enabled = false;
+                txt_tenlop.DataBindings.Clear();
+                txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
+                txt_siso.DataBindings.Clear();
+                txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
+                txt_malop.DataBindings.Clear();
+                txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
+                cb_Khoi_LopHoc.DataBindings.Clear();
+                cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
             }
             catch
             {
@@ -166,7 +215,22 @@ namespace GUI
                     LoadData();
                     btn_capnhatlop.Visible = true;
                     btn_Luu_Lai.Visible = false;
-                    txt_malop.Enabled = true;
+                    btn_them.Enabled = true;
+                    btn_xoalop.Enabled = true;
+                    btn_xeplop.Enabled = true;
+                    txt_malop.Enabled = false;
+                    txt_siso.Enabled = false;
+                    txt_tenlop.Enabled = false;
+                    cb_Khoi_LopHoc.Enabled = false;
+                    txt_tenlop.DataBindings.Clear();
+                    txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
+                    txt_siso.DataBindings.Clear();
+                    txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
+                    txt_malop.DataBindings.Clear();
+                    txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
+                    cb_Khoi_LopHoc.DataBindings.Clear();
+                    cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
+
                 }
                 else
                 {

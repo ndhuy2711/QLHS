@@ -35,8 +35,9 @@ namespace GUI
 
         private void danhSáchLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lop l = new Lop();
-            l.Show();
+            KhoiLop kl = new KhoiLop();
+            kl.Show();
+            
         }
 
         private void traCứuHọcSinhToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,14 +54,15 @@ namespace GUI
 
         private void thêmKhốiLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KhoiLop kl = new KhoiLop();
-            kl.Show();
+            ThemLop tl = new ThemLop();
+            tl.Show();
+            
         }
 
         private void thêmLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemLop tl = new ThemLop();
-            tl.Show();
+            Lop l = new Lop();
+            l.Show();
         }
 
         private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,16 +78,20 @@ namespace GUI
 
         private void họcKìToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HOCKI hk = new HOCKI();
-            hk.Show();
+            NhapBangDiemMonHoc nbdmh = new NhapBangDiemMonHoc();
+            nbdmh.Show();
+            
 
         }
 
         private void nhậpBảngĐiểmMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NhapBangDiemMonHoc nbdmh = new NhapBangDiemMonHoc();
+            HOCKI hk = new HOCKI();
+            hk.Show();
+        }
 
-            nbdmh.Show();
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
 
         }
     }

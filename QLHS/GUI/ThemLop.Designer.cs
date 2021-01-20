@@ -250,7 +250,7 @@ namespace GUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ThemLop";
-            this.Text = "ThemLop";
+            this.Text = "Thêm Lớp Học";
             this.Load += new System.EventHandler(this.ThemLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_themlop)).EndInit();
             this.groupBox1.ResumeLayout(false);
