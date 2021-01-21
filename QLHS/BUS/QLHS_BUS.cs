@@ -376,12 +376,12 @@ namespace BUS
                 throw ex;
             }
         }
-        public int CapNhatMonHoc(QLHS_DTO hs)
+        public int CapNhatMonHoc(string mamon, string tenmon)
         {
             try
             {
                 DAL_HOCSINH dal = new DAL_HOCSINH();
-                return dal.CapNhatMonHoc(hs);
+                return dal.CapNhatMonHoc(mamon, tenmon);
             }
             catch (SqlException ex)
             {

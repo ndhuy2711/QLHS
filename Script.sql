@@ -96,6 +96,7 @@ select * from BAOCAOTONGKETHK
 select * from BAOCAOTONGKETMON
 select * from THAMSO
 select * from HOCSINH
+delete FROM KHOILOP WHERE MaKhoiLop = N''
 -- Store Proc Update Danh
 CREATE 
 --ALTER
@@ -127,3 +128,5 @@ BEGIN
 END
 
 PRINT dbo.UF_AUTO_MABD()
+
+

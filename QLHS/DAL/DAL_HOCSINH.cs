@@ -696,17 +696,17 @@ namespace DAL
             }
             return nRow;
         }
-        public int CapNhatMonHoc(QLHS_DTO hs)
+        public int CapNhatMonHoc(string mamon, string tenmon)
         {
             int nRow = 0;
             DBConnect provider = new DBConnect();
             try
             {
-                string strSql = "UPDATE MONHOC SET MaMonHoc = @MaMonHoc, TenMonHoc = @TenMonHoc";
+                string strSql = "UPDATE MONHOC SET MaMonHoc = @MaMonHoc, TenMonHoc = @TenMonHoc WHERE MaMonHoc = @MaMonHoc";
                 provider.Connect();
                 nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
-                            new SqlParameter { ParameterName = "@MaMonHoc", Value = hs.MaMonHoc },
-                            new SqlParameter { ParameterName = "@TenMonHoc", Value = hs.TenMonHoc }
+                            new SqlParameter { ParameterName = "@MaMonHoc", Value = mamon },
+                            new SqlParameter { ParameterName = "@TenMonHoc", Value = tenmon }
                     );
 
             }

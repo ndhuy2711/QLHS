@@ -42,6 +42,7 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgv_danhsachmonhoc = new System.Windows.Forms.DataGridView();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhsachmonhoc)).BeginInit();
@@ -49,6 +50,7 @@ namespace GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_luu);
             this.groupBox1.Controls.Add(this.btn_nhapdiemmonhoc);
             this.groupBox1.Controls.Add(this.btn_XacNhan);
             this.groupBox1.Controls.Add(this.btn_xoa);
@@ -75,6 +77,7 @@ namespace GUI
             this.btn_nhapdiemmonhoc.TabIndex = 8;
             this.btn_nhapdiemmonhoc.Text = "Nhập điểm môn học";
             this.btn_nhapdiemmonhoc.UseVisualStyleBackColor = true;
+            this.btn_nhapdiemmonhoc.Click += new System.EventHandler(this.btn_nhapdiemmonhoc_Click);
             // 
             // btn_XacNhan
             // 
@@ -171,6 +174,17 @@ namespace GUI
             this.dtgv_danhsachmonhoc.TabIndex = 0;
             this.dtgv_danhsachmonhoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhsachmonhoc_CellContentClick);
             // 
+            // btn_luu
+            // 
+            this.btn_luu.Location = new System.Drawing.Point(170, 81);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(131, 33);
+            this.btn_luu.TabIndex = 9;
+            this.btn_luu.Text = "Lưu Lại";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Visible = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
             // MonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,5 +221,6 @@ namespace GUI
         private System.Windows.Forms.Button btn_capnhatmon;
         private System.Windows.Forms.Button btn_nhapdiemmonhoc;
         private System.Windows.Forms.Button btn_XacNhan;
+        private System.Windows.Forms.Button btn_luu;
     }
 }

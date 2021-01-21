@@ -144,7 +144,7 @@ namespace GUI
             this.cb_tenmh.FormattingEnabled = true;
             this.cb_tenmh.Location = new System.Drawing.Point(119, 99);
             this.cb_tenmh.Name = "cb_tenmh";
-            this.cb_tenmh.Size = new System.Drawing.Size(103, 25);
+            this.cb_tenmh.Size = new System.Drawing.Size(148, 25);
             this.cb_tenmh.TabIndex = 22;
             this.cb_tenmh.SelectedIndexChanged += new System.EventHandler(this.cb_tenmh_SelectedIndexChanged);
             // 
@@ -153,7 +153,7 @@ namespace GUI
             this.txt_tenhs.Enabled = false;
             this.txt_tenhs.Location = new System.Drawing.Point(119, 68);
             this.txt_tenhs.Name = "txt_tenhs";
-            this.txt_tenhs.Size = new System.Drawing.Size(103, 25);
+            this.txt_tenhs.Size = new System.Drawing.Size(148, 25);
             this.txt_tenhs.TabIndex = 21;
             // 
             // label6
