@@ -179,6 +179,7 @@ namespace GUI
             this.txt_siso.Name = "txt_siso";
             this.txt_siso.Size = new System.Drawing.Size(57, 25);
             this.txt_siso.TabIndex = 3;
+            this.txt_siso.TextChanged += new System.EventHandler(this.txt_siso_TextChanged);
             // 
             // txt_tenlop
             // 

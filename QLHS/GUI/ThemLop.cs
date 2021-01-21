@@ -167,34 +167,44 @@ namespace GUI
             btn_them.Visible = true;
             try
             {
-                QLHS_DTO hs = new QLHS_DTO();
-                hs.MaLop = txt_malop.Text;
-                hs.TenLop = txt_tenlop.Text;
-                hs.SiSo = txt_siso.Text;
-                hs.MaKhoiLop = cb_Khoi_LopHoc.Text;
                 QLHS_BUS bus = new QLHS_BUS();
-                bus.ThemLop(hs);
-                MessageBox.Show("Thêm thành công lớp " + txt_malop.Text + " !", "Thông báo");
-                LoadData();
-                btn_capnhatlop.Enabled = true;
-                btn_xoalop.Enabled = true;
-                btn_xeplop.Enabled = true;
-                txt_malop.Enabled = false;
-                txt_siso.Enabled = false;
-                txt_tenlop.Enabled = false;
-                cb_Khoi_LopHoc.Enabled = false;
-                txt_tenlop.DataBindings.Clear();
-                txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
-                txt_siso.DataBindings.Clear();
-                txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
-                txt_malop.DataBindings.Clear();
-                txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
-                cb_Khoi_LopHoc.DataBindings.Clear();
-                cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
+                DataTable dt = bus.ThamSo();
+                string t = txt_siso.Text.ToString();
+                if((0 < Int32.Parse(t) && Int32.Parse(t) < Int32.Parse(dt.Rows[0]["SiSo"].ToString())))
+                {
+                    QLHS_DTO hs = new QLHS_DTO();
+                    hs.MaLop = txt_malop.Text;
+                    hs.TenLop = txt_tenlop.Text;
+                    hs.SiSo = txt_siso.Text;
+                    hs.MaKhoiLop = cb_Khoi_LopHoc.Text;
+                    bus.ThemLop(hs);
+                    MessageBox.Show("Thêm thành công lớp " + txt_malop.Text + " !", "Thông báo");
+                    LoadData();
+                    btn_capnhatlop.Enabled = true;
+                    btn_xoalop.Enabled = true;
+                    btn_xeplop.Enabled = true;
+                    txt_malop.Enabled = false;
+                    txt_siso.Enabled = false;
+                    txt_tenlop.Enabled = false;
+                    cb_Khoi_LopHoc.Enabled = false;
+                    txt_tenlop.DataBindings.Clear();
+                    txt_tenlop.DataBindings.Add("Text", dtgv_themlop.DataSource, "TenLop");
+                    txt_siso.DataBindings.Clear();
+                    txt_siso.DataBindings.Add("Text", dtgv_themlop.DataSource, "SiSo");
+                    txt_malop.DataBindings.Clear();
+                    txt_malop.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaLop");
+                    cb_Khoi_LopHoc.DataBindings.Clear();
+                    cb_Khoi_LopHoc.DataBindings.Add("Text", dtgv_themlop.DataSource, "MaKhoiLop");
+                }
+                else
+                {
+                    MessageBox.Show("Sỉ số lớp sai quy định");
+                }
+                
             }
             catch
             {
-                MessageBox.Show("Mã lớp đã tồn tại!");
+                MessageBox.Show("Mời nhập lại đúng quy định!");
             }
         }
 
@@ -241,6 +251,11 @@ namespace GUI
             {
 
             }
+        }
+
+        private void txt_siso_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -408,7 +408,77 @@ namespace DAL
             }
             return nRow;
         }
+        public int CapNhatTuoi(int tuoinho, int tuoilon)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE THAMSO SET TuoiToiThieu = @TuoiToiThieu, TuoiToiDa = @TuoiToiDa";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@TuoiToiThieu", Value = tuoinho },
+                            new SqlParameter { ParameterName = "@TuoiToiDa", Value = tuoilon }
+                    );
 
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        
+    public int CapNhatSiSo(int ss)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE THAMSO SET SiSoToiDa = @SiSo";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@SiSo", Value = ss }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
+        public int CapNhatDiem(int d)
+        {
+            int nRow = 0;
+            DBConnect provider = new DBConnect();
+            try
+            {
+                string strSql = "UPDATE THAMSO SET DiemDatMon = @DiemDatMon";
+                provider.Connect();
+                nRow = provider.ExecuteNonQuery(CommandType.Text, strSql,
+                            new SqlParameter { ParameterName = "@DiemDatMon", Value = d }
+                    );
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                provider.DisConnect();
+            }
+            return nRow;
+        }
         public bool Check_MaKL(string malop)
         {
             int nRow = 0;

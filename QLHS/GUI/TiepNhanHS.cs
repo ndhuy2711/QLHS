@@ -130,7 +130,7 @@ namespace GUI
             }
             catch (Exception ex)
                 {
-                MessageBox.Show("Đã tồn tại Mã HS trong Data!");
+                MessageBox.Show("Mời nhập lại theo đúng quy định!");
                 }
             
            

@@ -255,6 +255,45 @@ namespace BUS
                 return 0;
             }
         }
+        
+    public int CapNhatTuoi(int tuoinho, int tuoilon)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatTuoi(tuoinho, tuoilon);
+            }
+            catch (SqlException ex)
+            {
+                return 0;
+            }
+        }
+        public int CapNhatSiSo(int ss)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatSiSo(ss);
+            }
+            catch (SqlException ex)
+            {
+                return 0;
+            }
+        }
+        
+    public int CapNhatDiem(int d)
+        {
+            try
+            {
+                DAL_HOCSINH dal = new DAL_HOCSINH();
+                return dal.CapNhatDiem(d);
+            }
+            catch (SqlException ex)
+            {
+                return 0;
+            }
+        }
+
         public int ThemHocKi(QLHS_DTO hs)
         {
             try
